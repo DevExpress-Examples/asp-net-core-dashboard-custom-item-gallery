@@ -31,40 +31,38 @@ namespace AspNetCoreCustomItemGallery {
             services
                 .AddResponseCompression()
                 .AddDevExpressControls()
-                .AddMvc()
+                .AddMvc();
+            services.AddScoped<DashboardConfigurator>((IServiceProvider serviceProvider) => {
+                DashboardConfigurator configurator = new DashboardConfigurator();
+                configurator.SetConnectionStringsProvider(new DashboardConnectionStringsProvider(Configuration));
+                DashboardFileStorage dashboardFileStorage = new DashboardFileStorage(FileProvider.GetFileInfo("Data/Dashboards").PhysicalPath);
+                configurator.SetDashboardStorage(dashboardFileStorage);
+                DataSourceInMemoryStorage dataSourceStorage = new DataSourceInMemoryStorage();
 
-                .AddDefaultDashboardController((configurator, serviceProvider)  => {
-                    configurator.SetConnectionStringsProvider(new DashboardConnectionStringsProvider(Configuration));
+                DashboardSqlDataSource sqlDataSource = new DashboardSqlDataSource("SQL Data Source", "NWindConnectionString");
+                sqlDataSource.DataProcessingMode = DataProcessingMode.Client;
+                SelectQuery query = SelectQueryFluentBuilder
+                    .AddTable("Categories")
+                    .Join("Products", "CategoryID")
+                    .SelectAllColumns()
+                    .Build("Products_Categories");
+                sqlDataSource.Queries.Add(query);
+                dataSourceStorage.RegisterDataSource("sqlDataSource", sqlDataSource.SaveToXml());
 
-                    DashboardFileStorage dashboardFileStorage = new DashboardFileStorage(FileProvider.GetFileInfo("Data/Dashboards").PhysicalPath);
-                    configurator.SetDashboardStorage(dashboardFileStorage);
+                DashboardExcelDataSource energyStatistics = new DashboardExcelDataSource("Energy Statistics");
+                energyStatistics.FileName = FileProvider.GetFileInfo("Data/EnergyStatistics.xls").PhysicalPath;
+                energyStatistics.SourceOptions = new ExcelSourceOptions(new ExcelWorksheetSettings("Map Data"));
+                dataSourceStorage.RegisterDataSource("energyStatisticsDataSource", energyStatistics.SaveToXml());
 
-                    DataSourceInMemoryStorage dataSourceStorage = new DataSourceInMemoryStorage();
+                DashboardObjectDataSource objDataSource = new DashboardObjectDataSource("Gantt Data", typeof(TasksData));
+                objDataSource.DataId = "odsTaskData";
+                dataSourceStorage.RegisterDataSource("objectDataSource", objDataSource.SaveToXml());
 
-                    // Registers an SQL data source.
-                    DashboardSqlDataSource sqlDataSource = new DashboardSqlDataSource("SQL Data Source", "NWindConnectionString");
-                    sqlDataSource.DataProcessingMode = DataProcessingMode.Client;
-                    SelectQuery query = SelectQueryFluentBuilder
-                        .AddTable("Categories")
-                        .Join("Products", "CategoryID")
-                        .SelectAllColumns()
-                        .Build("Products_Categories");
-                    sqlDataSource.Queries.Add(query);
-                    dataSourceStorage.RegisterDataSource("sqlDataSource", sqlDataSource.SaveToXml());
+                configurator.DataLoading += Configurator_DataLoading;
+                configurator.SetDataSourceStorage(dataSourceStorage);
 
-                    // Registers an Excel data source.
-                    DashboardExcelDataSource energyStatistics = new DashboardExcelDataSource("Energy Statistics");
-                    energyStatistics.FileName = FileProvider.GetFileInfo("Data/EnergyStatistics.xls").PhysicalPath;
-                    energyStatistics.SourceOptions = new ExcelSourceOptions(new ExcelWorksheetSettings("Map Data"));
-                    dataSourceStorage.RegisterDataSource("energyStatisticsDataSource", energyStatistics.SaveToXml());
-
-                    DashboardObjectDataSource objDataSource = new DashboardObjectDataSource("Gantt Data", typeof(TasksData));
-                    objDataSource.DataId = "odsTaskData";
-                    dataSourceStorage.RegisterDataSource("objectDataSource", objDataSource.SaveToXml());
-
-                    configurator.DataLoading += Configurator_DataLoading;
-                    configurator.SetDataSourceStorage(dataSourceStorage);         
-                });
+                return configurator;
+            });
         }
 
         private void Configurator_DataLoading(object sender, DataLoadingWebEventArgs e) {
