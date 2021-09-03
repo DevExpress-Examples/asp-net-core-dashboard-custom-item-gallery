@@ -155,28 +155,28 @@
             });
         }
         var autoAdjust = markers.length > 0 || routes.length > 0,
-            options = {
-                provider: this.getPropertyValue('Provider').toLowerCase(),
-                type: this.getPropertyValue('Type').toLowerCase(),
-                controls: true,
-                zoom: autoAdjust ? 1000 : 1,
-                autoAdjust: autoAdjust,
-                width: this.contentWidth(),
-                height: this.contentHeight(),
-                // Use the template below to authenticate the application within the required map provider.
-                //key: { 
-                //    bing: 'BINGAPIKEY',
-                //    google: 'GOOGLEAPIKEY'
-                //},             
-                markers: markers,
-                routes: routes.length > 0 ? [{
-                    weight: 6,
-                    color: 'blue',
-                    opacity: 0.5,
-                    mode: '',
-                    locations: routes
-                }] : []
-            };
+        options = {
+            provider: this.getPropertyValue('Provider').toLowerCase(),
+            type: this.getPropertyValue('Type').toLowerCase(),
+            controls: true,
+            zoom: autoAdjust ? 1000 : 1,
+            autoAdjust: autoAdjust,
+            width: this.contentWidth(),
+            height: this.contentHeight(),
+            // Use the template below to authenticate the application within the required map provider.
+            //key: { 
+            //    bing: 'BINGAPIKEY',
+            //    google: 'GOOGLEAPIKEY'
+            //},             
+            markers: markers,
+            routes: routes.length > 0 ? [{
+                weight: 6,
+                color: 'blue',
+                opacity: 0.5,
+                mode: '',
+                locations: routes
+            }] : []
+        };
         if (changeExisting && this.mapViewer) {
             this.mapViewer.option(options);
         }
