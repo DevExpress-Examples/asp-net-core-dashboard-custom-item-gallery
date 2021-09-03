@@ -1,7 +1,6 @@
 # Dashboard for ASP.NET Core - Custom Item Gallery
 
-The example contains the source code of custom items you can use in your Web Dashboard application. This example contains three dashboards with custom items.
-
+The example contains the source code of custom items you can use in your Web Dashboard application.
 <!-- default file list -->
 
 ## Files to Look At
