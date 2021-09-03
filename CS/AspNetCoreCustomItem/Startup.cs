@@ -63,9 +63,7 @@ namespace AspNetCoreCustomItemGallery {
                     dataSourceStorage.RegisterDataSource("objectDataSource", objDataSource.SaveToXml());
 
                     configurator.DataLoading += Configurator_DataLoading;
-                    configurator.SetDataSourceStorage(dataSourceStorage);
-
-         
+                    configurator.SetDataSourceStorage(dataSourceStorage);         
                 });
         }
 
@@ -75,10 +73,6 @@ namespace AspNetCoreCustomItemGallery {
                 dataSet.ReadXml(FileProvider.GetFileInfo("Data/GanttData.xml").PhysicalPath);
                 e.Data = dataSet.Tables[0];
             }
-        }
-
-        protected void COnfigurator_DataLoading(object sender, DataLoadingWebEventArgs e)
-        {
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
