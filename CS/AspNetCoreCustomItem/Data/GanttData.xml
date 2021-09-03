@@ -1,0 +1,1315 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="TaskDataItem" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="TaskDataItem">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ParentUID" type="xs:string" minOccurs="0" />
+                <xs:element name="StartDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="Duration" type="xs:duration" minOccurs="0" />
+                <xs:element name="FinishDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="BaselineStartDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="BaselineFinishDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="UID" type="xs:string" minOccurs="0" />
+                <xs:element name="Resources" type="xs:string" minOccurs="0" />
+                <xs:element name="Progress" type="xs:double" minOccurs="0" />
+                <xs:element name="ConstraintType" type="xs:int" minOccurs="0" />
+                <xs:element name="ConstraintDate" type="xs:dateTime" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <TaskDataItem>
+    <StartDate>2021-07-01T16:33:42+03:00</StartDate>
+    <Duration>P26DT12H</Duration>
+    <FinishDate>2021-10-18T20:33:42+03:00</FinishDate>
+    <Name>Project Management Workplan</Name>
+    <UID>0</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>0</ParentUID>
+    <StartDate>2021-07-01T16:33:42+03:00</StartDate>
+    <Duration>P4DT8H</Duration>
+    <FinishDate>2021-07-18T01:33:42+03:00</FinishDate>
+    <Name>Initiation Phase</Name>
+    <UID>1</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>1</ParentUID>
+    <StartDate>2021-07-01T16:33:42+03:00</StartDate>
+    <Duration>P1DT8H</Duration>
+    <FinishDate>2021-07-05T01:33:42+03:00</FinishDate>
+    <Name>Requirements Gathering &amp; Analysis</Name>
+    <UID>196</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>196</ParentUID>
+    <StartDate>2021-07-01T16:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-07-02T01:33:42+03:00</FinishDate>
+    <Name>Define process for gathering requirements</Name>
+    <UID>197</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>196</ParentUID>
+    <StartDate>2021-07-02T16:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-07-03T01:33:42+03:00</FinishDate>
+    <Name>Document project-stakeholder interviews</Name>
+    <UID>198</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>196</ParentUID>
+    <StartDate>2021-07-03T16:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-07-04T01:33:42+03:00</FinishDate>
+    <Name>Analyze requirements</Name>
+    <UID>195</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>196</ParentUID>
+    <StartDate>2021-07-04T16:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-07-05T01:33:42+03:00</FinishDate>
+    <Name>Create requirements document</Name>
+    <UID>203</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>1</ParentUID>
+    <StartDate>2021-07-04T16:33:42+03:00</StartDate>
+    <Duration>P3DT8H</Duration>
+    <FinishDate>2021-07-18T01:33:42+03:00</FinishDate>
+    <Name>Project Charter Development</Name>
+    <UID>6</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>6</ParentUID>
+    <StartDate>2021-07-04T16:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-07-06T01:33:42+03:00</FinishDate>
+    <Name>Business Case </Name>
+    <UID>107</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>107</ParentUID>
+    <StartDate>2021-07-04T16:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-07-06T01:33:42+03:00</FinishDate>
+    <Name>Document summary of business purpose justification</Name>
+    <UID>117</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>107</ParentUID>
+    <StartDate>2021-07-04T16:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-07-06T01:33:42+03:00</FinishDate>
+    <Name>Define expected benefits</Name>
+    <UID>118</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>6</ParentUID>
+    <StartDate>2021-07-08T16:33:42+03:00</StartDate>
+    <Duration>P1DT16H</Duration>
+    <FinishDate>2021-07-13T01:33:42+03:00</FinishDate>
+    <Name>Project Scope Definition (High Level)</Name>
+    <UID>108</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>108</ParentUID>
+    <StartDate>2021-07-08T16:33:42+03:00</StartDate>
+    <Duration>P1D</Duration>
+    <FinishDate>2021-07-11T01:33:42+03:00</FinishDate>
+    <Name>Define primary market research objectives</Name>
+    <UID>109</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>108</ParentUID>
+    <StartDate>2021-07-11T16:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-07-13T01:33:42+03:00</FinishDate>
+    <Name>Define primary market research deliverables</Name>
+    <UID>110</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>108</ParentUID>
+    <StartDate>2021-07-11T16:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-07-13T01:33:42+03:00</FinishDate>
+    <Name>Identify specific exclusions to scope</Name>
+    <UID>112</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>6</ParentUID>
+    <StartDate>2021-07-15T16:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-07-17T01:33:42+03:00</FinishDate>
+    <Name>Establish high-level time, cost, and resource estimates</Name>
+    <UID>113</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>6</ParentUID>
+    <StartDate>2021-07-15T16:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-07-17T01:33:42+03:00</FinishDate>
+    <Name>Establish list of key stakeholders</Name>
+    <UID>114</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>6</ParentUID>
+    <StartDate>2021-07-17T16:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-07-18T01:33:42+03:00</FinishDate>
+    <Name>Document project charter</Name>
+    <UID>204</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>6</ParentUID>
+    <StartDate>2021-07-18T01:33:42+03:00</StartDate>
+    <Duration>PT0S</Duration>
+    <FinishDate>2021-07-18T01:33:42+03:00</FinishDate>
+    <Name>Project Charter Approval</Name>
+    <UID>29</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>1</ParentUID>
+    <StartDate>2021-07-18T01:33:42+03:00</StartDate>
+    <Duration>PT0S</Duration>
+    <FinishDate>2021-07-18T01:33:42+03:00</FinishDate>
+    <Name>Initiation Phase Approval</Name>
+    <UID>104</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>0</ParentUID>
+    <StartDate>2021-07-18T16:33:42+03:00</StartDate>
+    <Duration>P10DT20H</Duration>
+    <FinishDate>2021-09-02T20:33:42+03:00</FinishDate>
+    <Name>Planning Phase</Name>
+    <UID>18</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>18</ParentUID>
+    <StartDate>2021-07-18T16:33:42+03:00</StartDate>
+    <Duration>P10DT20H</Duration>
+    <FinishDate>2021-09-02T20:33:42+03:00</FinishDate>
+    <Name>Project Plan Development</Name>
+    <UID>72</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>72</ParentUID>
+    <StartDate>2021-07-18T16:33:42+03:00</StartDate>
+    <Duration>P1DT8H</Duration>
+    <FinishDate>2021-07-24T01:33:42+03:00</FinishDate>
+    <Name>Scope Statement</Name>
+    <UID>119</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>119</ParentUID>
+    <StartDate>2021-07-18T16:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-07-20T01:33:42+03:00</FinishDate>
+    <Name>Create scope description (based on business objectives)</Name>
+    <UID>120</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>119</ParentUID>
+    <StartDate>2021-07-18T16:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-07-20T01:33:42+03:00</FinishDate>
+    <Name>Define scope boundaries (both in and out of scope)</Name>
+    <UID>121</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>119</ParentUID>
+    <StartDate>2021-07-22T16:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-07-24T01:33:42+03:00</FinishDate>
+    <Name>Define key project deliverables (including user-acceptable criteria)</Name>
+    <UID>123</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>72</ParentUID>
+    <StartDate>2021-07-24T16:33:42+03:00</StartDate>
+    <Duration>P1DT8H</Duration>
+    <FinishDate>2021-07-30T01:33:42+03:00</FinishDate>
+    <Name>Work Breakdown Structure (WBS) </Name>
+    <UID>192</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>192</ParentUID>
+    <StartDate>2021-07-24T16:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-07-26T01:33:42+03:00</FinishDate>
+    <Name>Create WBS to work-level execution</Name>
+    <UID>193</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>192</ParentUID>
+    <StartDate>2021-07-26T16:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-07-30T01:33:42+03:00</FinishDate>
+    <Name>Define task dependencies (including predecessors/successors)</Name>
+    <UID>194</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>72</ParentUID>
+    <StartDate>2021-07-30T16:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-01T01:33:42+03:00</FinishDate>
+    <Name>Performance Baseline Measurement</Name>
+    <UID>166</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>166</ParentUID>
+    <StartDate>2021-07-30T16:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-07-31T01:33:42+03:00</FinishDate>
+    <Name>Create schedule baseline (with expected resource effort)</Name>
+    <UID>167</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>166</ParentUID>
+    <StartDate>2021-07-31T16:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-08-01T01:33:42+03:00</FinishDate>
+    <Name>Define budget baseline (with schedule and cost assumptions)</Name>
+    <UID>168</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>166</ParentUID>
+    <StartDate>2021-07-31T16:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-08-01T01:33:42+03:00</FinishDate>
+    <Name>Establish baseline tolerance thresholds (trigger change control)</Name>
+    <UID>177</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>72</ParentUID>
+    <StartDate>2021-07-24T16:33:42+03:00</StartDate>
+    <Duration>P2DT16H</Duration>
+    <FinishDate>2021-08-03T01:33:42+03:00</FinishDate>
+    <Name>Procurement Planning (Research Vendor Selection)</Name>
+    <UID>211</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>211</ParentUID>
+    <StartDate>2021-07-24T16:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-07-25T01:33:42+03:00</FinishDate>
+    <Name>Analyze market conditions</Name>
+    <UID>210</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>211</ParentUID>
+    <StartDate>2021-07-25T16:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-07-27T01:33:42+03:00</FinishDate>
+    <Name>Analyze make-or-buy findings</Name>
+    <UID>214</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>211</ParentUID>
+    <StartDate>2021-07-29T16:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-07-30T01:33:42+03:00</FinishDate>
+    <Name>Select contract type</Name>
+    <UID>213</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>211</ParentUID>
+    <StartDate>2021-07-30T16:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-01T01:33:42+03:00</FinishDate>
+    <Name>Develop procurement management plan</Name>
+    <UID>212</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>211</ParentUID>
+    <StartDate>2021-08-01T16:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-03T01:33:42+03:00</FinishDate>
+    <Name>Develop statement of work</Name>
+    <UID>209</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>72</ParentUID>
+    <StartDate>2021-08-01T16:33:42+03:00</StartDate>
+    <Duration>PT20H</Duration>
+    <FinishDate>2021-08-05T20:33:42+03:00</FinishDate>
+    <Name>Project Schedule Plan</Name>
+    <UID>159</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>159</ParentUID>
+    <StartDate>2021-08-01T16:33:42+03:00</StartDate>
+    <Duration>PT4H</Duration>
+    <FinishDate>2021-08-01T20:33:42+03:00</FinishDate>
+    <Name>Project Milestones (PMs)</Name>
+    <UID>131</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>131</ParentUID>
+    <StartDate>2021-08-01T16:33:42+03:00</StartDate>
+    <Duration>PT4H</Duration>
+    <FinishDate>2021-08-01T20:33:42+03:00</FinishDate>
+    <Name>Define major milestones (alignment with deliverables) </Name>
+    <UID>132</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>159</ParentUID>
+    <StartDate>2021-08-01T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-05T20:33:42+03:00</FinishDate>
+    <Name>Project Scheduling Work Plan </Name>
+    <UID>160</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>160</ParentUID>
+    <StartDate>2021-08-01T21:33:42+03:00</StartDate>
+    <Duration>PT4H</Duration>
+    <FinishDate>2021-08-02T01:33:42+03:00</FinishDate>
+    <Name>Define standard PM and approval gates</Name>
+    <UID>165</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>160</ParentUID>
+    <StartDate>2021-08-01T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-05T20:33:42+03:00</FinishDate>
+    <Name>Document WBS, milestones, and deliverables (dates and resourcing)</Name>
+    <UID>161</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>160</ParentUID>
+    <StartDate>2021-08-01T21:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-08-02T20:33:42+03:00</FinishDate>
+    <Name>Document schedule baseline</Name>
+    <UID>170</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>72</ParentUID>
+    <StartDate>2021-08-02T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-06T20:33:42+03:00</FinishDate>
+    <Name>Resource Management</Name>
+    <UID>183</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>183</ParentUID>
+    <StartDate>2021-08-02T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-06T20:33:42+03:00</FinishDate>
+    <Name>Name project team members (with roles and responsibilities)</Name>
+    <UID>184</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>183</ParentUID>
+    <StartDate>2021-08-02T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-06T20:33:42+03:00</FinishDate>
+    <Name>Define all project stakeholders (with roles and project team liaison)</Name>
+    <UID>185</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>183</ParentUID>
+    <StartDate>2021-08-02T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-06T20:33:42+03:00</FinishDate>
+    <Name>Create org chart: project team, sponsor, steering committee, stakeholders</Name>
+    <UID>186</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>72</ParentUID>
+    <StartDate>2021-08-06T21:33:42+03:00</StartDate>
+    <Duration>P6DT8H</Duration>
+    <FinishDate>2021-09-02T20:33:42+03:00</FinishDate>
+    <Name>Supporting PM Process Plans</Name>
+    <UID>188</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>188</ParentUID>
+    <StartDate>2021-08-06T21:33:42+03:00</StartDate>
+    <Duration>P1DT8H</Duration>
+    <FinishDate>2021-08-12T20:33:42+03:00</FinishDate>
+    <Name>Change Management</Name>
+    <UID>136</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>136</ParentUID>
+    <StartDate>2021-08-06T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-08T20:33:42+03:00</FinishDate>
+    <Name>Document change control procedure for budget and schedule baselines</Name>
+    <UID>137</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>136</ParentUID>
+    <StartDate>2021-08-06T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-08T20:33:42+03:00</FinishDate>
+    <Name>Document change control for approved scope baseline</Name>
+    <UID>139</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>136</ParentUID>
+    <StartDate>2021-08-08T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-12T20:33:42+03:00</FinishDate>
+    <Name>Document change control for systems modifications</Name>
+    <UID>140</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>188</ParentUID>
+    <StartDate>2021-08-12T21:33:42+03:00</StartDate>
+    <Duration>P1DT8H</Duration>
+    <FinishDate>2021-08-16T20:33:42+03:00</FinishDate>
+    <Name>Risk Management</Name>
+    <UID>141</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>141</ParentUID>
+    <StartDate>2021-08-12T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-14T20:33:42+03:00</FinishDate>
+    <Name>Document risk process: prioritization, mitigation, and contingency guidelines</Name>
+    <UID>143</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>141</ParentUID>
+    <StartDate>2021-08-14T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-16T20:33:42+03:00</FinishDate>
+    <Name>Document risk assessment for scope, budget, and schedule baselines</Name>
+    <UID>147</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>188</ParentUID>
+    <StartDate>2021-08-16T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-20T20:33:42+03:00</FinishDate>
+    <Name>Issues Management</Name>
+    <UID>144</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>144</ParentUID>
+    <StartDate>2021-08-16T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-20T20:33:42+03:00</FinishDate>
+    <Name>Document issues process: prioritization, resolution, and tracking guidelines</Name>
+    <UID>145</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>144</ParentUID>
+    <StartDate>2021-08-16T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-20T20:33:42+03:00</FinishDate>
+    <Name>Document formal 3-tiered escalation: project manager, sponsor, and executives</Name>
+    <UID>146</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>188</ParentUID>
+    <StartDate>2021-08-20T21:33:42+03:00</StartDate>
+    <Duration>P1DT8H</Duration>
+    <FinishDate>2021-08-26T20:33:42+03:00</FinishDate>
+    <Name>Communication Plan</Name>
+    <UID>138</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>138</ParentUID>
+    <StartDate>2021-08-20T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-22T20:33:42+03:00</FinishDate>
+    <Name>Document guidelines: project updates and stakeholder collaboration</Name>
+    <UID>171</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>138</ParentUID>
+    <StartDate>2021-08-20T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-22T20:33:42+03:00</FinishDate>
+    <Name>Document guidelines for document repository access and controls</Name>
+    <UID>179</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>138</ParentUID>
+    <StartDate>2021-08-22T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-26T20:33:42+03:00</FinishDate>
+    <Name>Document standard project team and executive status report guidelines</Name>
+    <UID>187</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>188</ParentUID>
+    <StartDate>2021-08-26T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-28T20:33:42+03:00</FinishDate>
+    <Name>Quality Assurance and Control Plan</Name>
+    <UID>172</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>172</ParentUID>
+    <StartDate>2021-08-26T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-28T20:33:42+03:00</FinishDate>
+    <Name>Define criteria for user-acceptance testing (with checklist)</Name>
+    <UID>175</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>172</ParentUID>
+    <StartDate>2021-08-26T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-28T20:33:42+03:00</FinishDate>
+    <Name>Define criteria for cost/benefit analysis</Name>
+    <UID>176</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>172</ParentUID>
+    <StartDate>2021-08-26T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-28T20:33:42+03:00</FinishDate>
+    <Name>Define criteria and process for periodic stakeholder satisfaction survey</Name>
+    <UID>173</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>172</ParentUID>
+    <StartDate>2021-08-26T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-08-28T20:33:42+03:00</FinishDate>
+    <Name>Define criteria for "Lessons Learned" (during closeout)</Name>
+    <UID>178</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>188</ParentUID>
+    <StartDate>2021-08-28T21:33:42+03:00</StartDate>
+    <Duration>P1D</Duration>
+    <FinishDate>2021-09-02T20:33:42+03:00</FinishDate>
+    <Name>Create Draft Project Plan</Name>
+    <UID>206</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>72</ParentUID>
+    <StartDate>2021-09-02T20:33:42+03:00</StartDate>
+    <Duration>PT0S</Duration>
+    <FinishDate>2021-09-02T20:33:42+03:00</FinishDate>
+    <Name>Project Plan Approval</Name>
+    <UID>31</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>18</ParentUID>
+    <StartDate>2021-09-02T20:33:42+03:00</StartDate>
+    <Duration>PT0S</Duration>
+    <FinishDate>2021-09-02T20:33:42+03:00</FinishDate>
+    <Name>Planning Phase Approval</Name>
+    <UID>105</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>0</ParentUID>
+    <StartDate>2021-09-02T21:33:42+03:00</StartDate>
+    <Duration>P10DT8H</Duration>
+    <FinishDate>2021-10-15T20:33:42+03:00</FinishDate>
+    <Name>Execution Phase</Name>
+    <UID>32</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>32</ParentUID>
+    <StartDate>2021-09-02T21:33:42+03:00</StartDate>
+    <Duration>P10DT8H</Duration>
+    <FinishDate>2021-10-15T20:33:42+03:00</FinishDate>
+    <Name>Brainstorming Marketing Idea</Name>
+    <UID>73</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>73</ParentUID>
+    <StartDate>2021-09-02T21:33:42+03:00</StartDate>
+    <Duration>P1DT2H</Duration>
+    <FinishDate>2021-09-05T23:33:42+03:00</FinishDate>
+    <Name>Prep Work</Name>
+    <UID>227</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>227</ParentUID>
+    <StartDate>2021-09-02T21:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-09-03T20:33:42+03:00</FinishDate>
+    <Name>Define objectives</Name>
+    <UID>222</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>227</ParentUID>
+    <StartDate>2021-09-03T21:33:42+03:00</StartDate>
+    <Duration>PT4H</Duration>
+    <FinishDate>2021-09-04T01:33:42+03:00</FinishDate>
+    <Name>Identify brainstorming team</Name>
+    <UID>217</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>227</ParentUID>
+    <StartDate>2021-09-04T16:33:42+03:00</StartDate>
+    <Duration>PT2H</Duration>
+    <FinishDate>2021-09-04T18:33:42+03:00</FinishDate>
+    <Name>Identify location</Name>
+    <UID>216</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>227</ParentUID>
+    <StartDate>2021-09-04T18:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-09-05T18:33:42+03:00</FinishDate>
+    <Name>Develop agenda</Name>
+    <UID>215</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>227</ParentUID>
+    <StartDate>2021-09-05T18:33:42+03:00</StartDate>
+    <Duration>PT2H</Duration>
+    <FinishDate>2021-09-05T20:33:42+03:00</FinishDate>
+    <Name>Schedule facility</Name>
+    <UID>88</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>227</ParentUID>
+    <StartDate>2021-09-05T21:33:42+03:00</StartDate>
+    <Duration>PT2H</Duration>
+    <FinishDate>2021-09-05T23:33:42+03:00</FinishDate>
+    <Name>Arrange facilitator</Name>
+    <UID>221</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>73</ParentUID>
+    <StartDate>2021-09-12T23:33:42+03:00</StartDate>
+    <Duration>P1DT16H</Duration>
+    <FinishDate>2021-09-19T23:33:42+03:00</FinishDate>
+    <Name>Brainstorming Session</Name>
+    <UID>226</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>226</ParentUID>
+    <StartDate>2021-09-12T23:33:42+03:00</StartDate>
+    <Duration>PT4H</Duration>
+    <FinishDate>2021-09-13T18:33:42+03:00</FinishDate>
+    <Name>Analyze market condition</Name>
+    <UID>230</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>226</ParentUID>
+    <StartDate>2021-09-13T18:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-09-16T18:33:42+03:00</FinishDate>
+    <Name>Identify risks</Name>
+    <UID>231</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>226</ParentUID>
+    <StartDate>2021-09-16T18:33:42+03:00</StartDate>
+    <Duration>PT4H</Duration>
+    <FinishDate>2021-09-16T23:33:42+03:00</FinishDate>
+    <Name>Select primary market research tool</Name>
+    <UID>233</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>226</ParentUID>
+    <StartDate>2021-09-16T23:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-09-17T23:33:42+03:00</FinishDate>
+    <Name>Gather ideas</Name>
+    <UID>220</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>226</ParentUID>
+    <StartDate>2021-09-17T23:33:42+03:00</StartDate>
+    <Duration>PT4H</Duration>
+    <FinishDate>2021-09-18T18:33:42+03:00</FinishDate>
+    <Name>Analyze ideas</Name>
+    <UID>219</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>226</ParentUID>
+    <StartDate>2021-09-18T18:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-09-19T18:33:42+03:00</FinishDate>
+    <Name>Develop research brief</Name>
+    <UID>225</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>226</ParentUID>
+    <StartDate>2021-09-19T18:33:42+03:00</StartDate>
+    <Duration>PT4H</Duration>
+    <FinishDate>2021-09-19T23:33:42+03:00</FinishDate>
+    <Name>Present to management</Name>
+    <UID>224</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>73</ParentUID>
+    <StartDate>2021-09-02T21:33:42+03:00</StartDate>
+    <Duration>P4D</Duration>
+    <FinishDate>2021-09-18T20:33:42+03:00</FinishDate>
+    <Name>Solicitation</Name>
+    <UID>236</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>236</ParentUID>
+    <StartDate>2021-09-02T21:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-09-03T20:33:42+03:00</FinishDate>
+    <Name>Define evaluation criteria</Name>
+    <UID>235</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>236</ParentUID>
+    <StartDate>2021-09-03T21:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-09-04T20:33:42+03:00</FinishDate>
+    <Name>Advertise Scope of Work (SOW)</Name>
+    <UID>223</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>236</ParentUID>
+    <StartDate>2021-09-18T20:33:42+03:00</StartDate>
+    <Duration>PT0S</Duration>
+    <FinishDate>2021-09-18T20:33:42+03:00</FinishDate>
+    <Name>Collect Proposals</Name>
+    <UID>218</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>73</ParentUID>
+    <StartDate>2021-09-18T21:33:42+03:00</StartDate>
+    <Duration>P1DT16H</Duration>
+    <FinishDate>2021-09-25T20:33:42+03:00</FinishDate>
+    <Name>Source Selection (Research Vendor Selection)</Name>
+    <UID>238</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>238</ParentUID>
+    <StartDate>2021-09-18T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-09-20T20:33:42+03:00</FinishDate>
+    <Name>Evaluate proposals</Name>
+    <UID>241</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>238</ParentUID>
+    <StartDate>2021-09-20T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-09-24T20:33:42+03:00</FinishDate>
+    <Name>Screen vendors</Name>
+    <UID>240</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>238</ParentUID>
+    <StartDate>2021-09-24T21:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-09-25T20:33:42+03:00</FinishDate>
+    <Name>Negotiate contract</Name>
+    <UID>239</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>238</ParentUID>
+    <StartDate>2021-09-25T20:33:42+03:00</StartDate>
+    <Duration>PT0S</Duration>
+    <FinishDate>2021-09-25T20:33:42+03:00</FinishDate>
+    <Name>Select Vendor</Name>
+    <UID>237</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>73</ParentUID>
+    <StartDate>2021-09-25T21:33:42+03:00</StartDate>
+    <Duration>P4DT16H</Duration>
+    <FinishDate>2021-10-15T20:33:42+03:00</FinishDate>
+    <Name>Primary Market Research Tool Development</Name>
+    <UID>244</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>244</ParentUID>
+    <StartDate>2021-09-25T21:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-09-26T20:33:42+03:00</FinishDate>
+    <Name>Identify method of survey (phone, in-person, Internet, magazines, etc.)</Name>
+    <UID>247</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>244</ParentUID>
+    <StartDate>2021-09-26T21:33:42+03:00</StartDate>
+    <Duration>PT4H</Duration>
+    <FinishDate>2021-09-27T01:33:42+03:00</FinishDate>
+    <Name>Identify minimum number of samples</Name>
+    <UID>246</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>244</ParentUID>
+    <StartDate>2021-09-27T16:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-09-28T01:33:42+03:00</FinishDate>
+    <Name>Identify test market</Name>
+    <UID>251</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>244</ParentUID>
+    <StartDate>2021-09-30T16:33:42+03:00</StartDate>
+    <Duration>PT4H</Duration>
+    <FinishDate>2021-09-30T20:33:42+03:00</FinishDate>
+    <Name>Identify demographics</Name>
+    <UID>245</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>244</ParentUID>
+    <StartDate>2021-09-30T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-10-02T20:33:42+03:00</FinishDate>
+    <Name>Define questionnaire</Name>
+    <UID>243</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>244</ParentUID>
+    <StartDate>2021-10-02T21:33:42+03:00</StartDate>
+    <Duration>P1DT16H</Duration>
+    <FinishDate>2021-10-09T20:33:42+03:00</FinishDate>
+    <Name>Conduct research</Name>
+    <UID>250</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>244</ParentUID>
+    <StartDate>2021-10-09T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-10-11T20:33:42+03:00</FinishDate>
+    <Name>Compile results</Name>
+    <UID>249</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>244</ParentUID>
+    <StartDate>2021-10-11T21:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-10-14T20:33:42+03:00</FinishDate>
+    <Name>Generate report</Name>
+    <UID>248</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>244</ParentUID>
+    <StartDate>2021-10-14T21:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-10-15T20:33:42+03:00</FinishDate>
+    <Name>Present report</Name>
+    <UID>242</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>32</ParentUID>
+    <StartDate>2021-10-15T20:33:42+03:00</StartDate>
+    <Duration>PT0S</Duration>
+    <FinishDate>2021-10-15T20:33:42+03:00</FinishDate>
+    <Name>Execution Phase Gateway Approval</Name>
+    <UID>43</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>0</ParentUID>
+    <StartDate>2021-10-15T16:33:42+03:00</StartDate>
+    <Duration>P1DT4H</Duration>
+    <FinishDate>2021-10-18T20:33:42+03:00</FinishDate>
+    <Name>Closeout Phase</Name>
+    <UID>44</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>44</ParentUID>
+    <StartDate>2021-10-15T16:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-10-16T01:33:42+03:00</FinishDate>
+    <Name>Contract Closeout</Name>
+    <UID>257</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>44</ParentUID>
+    <StartDate>2021-10-15T21:33:42+03:00</StartDate>
+    <Duration>PT16H</Duration>
+    <FinishDate>2021-10-17T20:33:42+03:00</FinishDate>
+    <Name>Launch project "Lessons Learned" review</Name>
+    <UID>258</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>44</ParentUID>
+    <StartDate>2021-10-15T21:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-10-16T20:33:42+03:00</FinishDate>
+    <Name>Establish process for archiving project data</Name>
+    <UID>253</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>253</ParentUID>
+    <StartDate>2021-10-15T21:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-10-16T20:33:42+03:00</FinishDate>
+    <Name>Archive documents</Name>
+    <UID>256</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>44</ParentUID>
+    <StartDate>2021-10-17T21:33:42+03:00</StartDate>
+    <Duration>PT8H</Duration>
+    <FinishDate>2021-10-18T20:33:42+03:00</FinishDate>
+    <Name>Conduct administrative closeout</Name>
+    <UID>96</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+  <TaskDataItem>
+    <ParentUID>44</ParentUID>
+    <StartDate>2021-10-18T20:33:42+03:00</StartDate>
+    <Duration>PT0S</Duration>
+    <FinishDate>2021-10-18T20:33:42+03:00</FinishDate>
+    <Name>Closeout Phase Approval</Name>
+    <UID>95</UID>
+    <Resources />
+    <Progress>0</Progress>
+    <ConstraintType>0</ConstraintType>
+  </TaskDataItem>
+</NewDataSet>

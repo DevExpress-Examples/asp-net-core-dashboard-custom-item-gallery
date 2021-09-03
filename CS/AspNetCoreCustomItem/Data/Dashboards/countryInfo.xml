@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Country Info" />
+  <DataSources>
+    <ExcelDataSource Name="Energy Statistics" FileName="D:\work\examples\asp-net-core-dashboard-custom-item-gallery\CS\AspNetCoreCustomItem\Data\EnergyStatistics.xls" ComponentName="excelDataSource1">
+      <Options Type="DevExpress.DataAccess.Excel.ExcelSourceOptions" SkipEmptyRows="true" UseFirstRowAsHeader="true" SkipHiddenColumns="true" SkipHiddenRows="true">
+        <ImportSettings Type="DevExpress.DataAccess.Excel.ExcelWorksheetSettings" WorksheetName="Map Data" />
+      </Options>
+      <Schema />
+      <ResultSchema />
+    </ExcelDataSource>
+  </DataSources>
+  <Items>
+    <CustomItem ComponentName="customItemDashboardItem1" Name="Online Map" DataSource="excelDataSource1" CustomItemType="OnlineMapCustomItem">
+      <CustomProperties>
+        <Type>RoadMap</Type>
+      </CustomProperties>
+      <InteractivityOptions MasterFilterMode="Single" />
+      <DataItems>
+        <Dimension DataMember="Latitude" DefaultId="DataItem0" />
+        <Dimension DataMember="Longitude" DefaultId="DataItem1" />
+      </DataItems>
+      <SliceTables>
+        <SliceTable Name="SliceTable1">
+          <Dimensions>
+            <Dimension DefaultId="DataItem0" />
+            <Dimension DefaultId="DataItem1" />
+          </Dimensions>
+        </SliceTable>
+      </SliceTables>
+      <InteractivityTargets>
+        <Dimension DefaultId="DataItem0" />
+        <Dimension DefaultId="DataItem1" />
+      </InteractivityTargets>
+      <CustomMetadata>
+        <Latitude ItemType="Dimension" DefaultId="DataItem0" />
+        <Longitude ItemType="Dimension" DefaultId="DataItem1" />
+      </CustomMetadata>
+    </CustomItem>
+    <CustomItem ComponentName="customItemDashboardItem2" Name="Web Page" DataSource="excelDataSource1" CustomItemType="WebPage">
+      <DataItems>
+        <Dimension DataMember="Country" DefaultId="DataItem0" />
+      </DataItems>
+      <SliceTables>
+        <SliceTable Name="SliceTable1">
+          <Dimensions>
+            <Dimension DefaultId="DataItem0" />
+          </Dimensions>
+        </SliceTable>
+      </SliceTables>
+      <CustomMetadata>
+        <Attribute ItemType="Dimension" DefaultId="DataItem0" />
+      </CustomMetadata>
+    </CustomItem>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutItem DashboardItem="customItemDashboardItem1" />
+      <LayoutItem DashboardItem="customItemDashboardItem2" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

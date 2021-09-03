@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Dashboard Web Application</title>
+
+    <link href="css/site.min.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        function onBeforeRender(dashboardControl) {
+            dashboardControl.registerExtension(new DevExpress.Dashboard.DashboardPanelExtension(dashboardControl));
+            dashboardControl.registerExtension(new OnlineMapCustomItem(dashboardControl));
+            dashboardControl.registerExtension(new PolarChartCustomItem(dashboardControl));
+            dashboardControl.registerExtension(new WebPageCustomItem(dashboardControl));
+            dashboardControl.registerExtension(new SimpleTableCustomItem(dashboardControl));
+            dashboardControl.registerExtension(new GanttCustomItem(dashboardControl));
+            dashboardControl.registerExtension(new ParameterCustomItem(dashboardControl));
+        }
+    </script>
+</head>
+<body>
+    @RenderBody()
+    <script src="js/site.min.js"></script>
+    <script src="js/OnlineMapItem.js"></script>
+    <script src="js/PolarChartItem.js"></script>
+    <script src="js/WebPageItem.js"></script>
+    <script src="js/SimpleTableItem.js"></script>
+    <script src="js/GanttItem.js"></script>
+    <script src="js/ParameterItem.js"></script>
+</body>
+</html>

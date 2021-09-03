@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Country Sales" />
+  <DataSources>
+    <SqlDataSource Name="SalesPerson" ComponentName="DataSource1" DataProcessingMode="Client">
+      <Connection Name="NWindConnectionString" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="SalesPerson">
+        <Parameter Name="countryParam" Type="DevExpress.DataAccess.Expression">(System.String)(?Country)</Parameter>
+        <Tables>
+          <Table Name="SalesPerson" />
+        </Tables>
+        <Columns>
+          <AllColumns Table="SalesPerson" />
+        </Columns>
+        <Filter>[SalesPerson.Country] = ?countryParam</Filter>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+    <SqlDataSource Name="Country" ComponentName="sqlDataSource1">
+      <Connection Name="NWindConnectionString" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="SalesPerson">
+        <Tables>
+          <Table Name="SalesPerson" />
+        </Tables>
+        <Columns>
+          <Column Table="SalesPerson" Name="Country" />
+        </Columns>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Parameters>
+    <Parameter Name="Country" Value="UK">
+      <DynamicListLookUpSettings DataSourceName="sqlDataSource1" DataMember="SalesPerson" ValueMember="Country" />
+    </Parameter>
+  </Parameters>
+  <Items>
+    <CustomItem ComponentName="customItemDashboardItem2" Name="Polar Chart" DataSource="DataSource1" DataMember="SalesPerson" CustomItemType="PolarChart">
+      <InteractivityOptions MasterFilterMode="Single" />
+      <DataItems>
+        <Measure DataMember="ExtendedPrice" SummaryType="Count" DefaultId="DataItem0" />
+        <Dimension DataMember="CategoryName" DefaultId="DataItem1" />
+      </DataItems>
+      <SliceTables>
+        <SliceTable Name="SliceTable1">
+          <Dimensions>
+            <Dimension DefaultId="DataItem1" />
+          </Dimensions>
+          <Measures>
+            <Measure DefaultId="DataItem0" />
+          </Measures>
+        </SliceTable>
+      </SliceTables>
+      <InteractivityTargets>
+        <Dimension DefaultId="DataItem1" />
+      </InteractivityTargets>
+      <ColoringDimensions>
+        <Dimension DefaultId="DataItem1" />
+      </ColoringDimensions>
+      <CustomMetadata>
+        <measureValue>
+          <Item1 ItemType="Measure" DefaultId="DataItem0" />
+        </measureValue>
+        <dimensionValue ItemType="Dimension" DefaultId="DataItem1" />
+      </CustomMetadata>
+    </CustomItem>
+    <CustomItem ComponentName="customItemDashboardItem3" Name="Simple Table" DataSource="DataSource1" DataMember="SalesPerson" CustomItemType="simpleTableItem">
+      <CustomProperties>
+        <showHeaders>On</showHeaders>
+      </CustomProperties>
+      <DataItems>
+        <Dimension DataMember="ProductName" DefaultId="DataItem0" />
+        <Measure DataMember="ExtendedPrice" SummaryType="Count" DefaultId="DataItem1" />
+      </DataItems>
+      <SliceTables>
+        <SliceTable Name="SliceTable1">
+          <Dimensions>
+            <Dimension DefaultId="DataItem0" />
+          </Dimensions>
+          <Measures>
+            <Measure DefaultId="DataItem1" />
+          </Measures>
+        </SliceTable>
+      </SliceTables>
+      <CustomMetadata>
+        <customDimensions>
+          <Item1 ItemType="Dimension" DefaultId="DataItem0" />
+        </customDimensions>
+        <customMeasure ItemType="Measure" DefaultId="DataItem1" />
+      </CustomMetadata>
+    </CustomItem>
+    <CustomItem ComponentName="customItemDashboardItem1" Name="Parameters" ShowCaption="false" DataSource="DataSource1" DataMember="SalesPerson" CustomItemType="Parameter Item">
+      <CustomProperties>
+        <automaticUpdates>On</automaticUpdates>
+      </CustomProperties>
+    </CustomItem>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutGroup Orientation="Vertical" Weight="0.6186060583046931">
+        <LayoutItem DashboardItem="customItemDashboardItem1" Weight="0.23247642413652175" />
+        <LayoutItem DashboardItem="customItemDashboardItem3" Weight="1.1668486602279327" />
+      </LayoutGroup>
+      <LayoutItem DashboardItem="customItemDashboardItem2" Weight="1.9820688573308527" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

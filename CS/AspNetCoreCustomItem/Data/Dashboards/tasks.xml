@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Tasks" />
+  <DataSources>
+    <ObjectDataSource Name="Gantt Data" ComponentName="objectDataSource1" DataId="odsTaskData">
+      <DataSource Type="AspNetCoreCustomItemGallery.Models.TasksData, AspNetCoreCustomItemGallery, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    </ObjectDataSource>
+  </DataSources>
+  <Items>
+    <CustomItem ComponentName="customItemDashboardItem1" Name="Gantt Chart" DataSource="objectDataSource1" CustomItemType="ganttCustomItem">
+      <InteractivityOptions MasterFilterMode="Single" />
+      <DataItems>
+        <Dimension DataMember="UID" DefaultId="DataItem0" />
+        <Dimension DataMember="ParentUID" DefaultId="DataItem1" />
+        <Dimension DataMember="StartDate" DateTimeGroupInterval="None" DefaultId="DataItem2" />
+        <Dimension DataMember="FinishDate" DateTimeGroupInterval="None" DefaultId="DataItem3" />
+        <Dimension DataMember="Name" DefaultId="DataItem4" />
+      </DataItems>
+      <SliceTables>
+        <SliceTable Name="SliceTable1">
+          <Dimensions>
+            <Dimension DefaultId="DataItem0" />
+            <Dimension DefaultId="DataItem1" />
+            <Dimension DefaultId="DataItem4" />
+            <Dimension DefaultId="DataItem2" />
+            <Dimension DefaultId="DataItem3" />
+          </Dimensions>
+        </SliceTable>
+      </SliceTables>
+      <InteractivityTargets>
+        <Dimension DefaultId="DataItem0" />
+        <Dimension DefaultId="DataItem1" />
+        <Dimension DefaultId="DataItem4" />
+        <Dimension DefaultId="DataItem2" />
+        <Dimension DefaultId="DataItem3" />
+      </InteractivityTargets>
+      <CustomMetadata>
+        <ID ItemType="Dimension" DefaultId="DataItem0" />
+        <ParentID ItemType="Dimension" DefaultId="DataItem1" />
+        <Text ItemType="Dimension" DefaultId="DataItem4" />
+        <StartDate ItemType="Dimension" DefaultId="DataItem2" />
+        <FinishDate ItemType="Dimension" DefaultId="DataItem3" />
+      </CustomMetadata>
+    </CustomItem>
+    <Grid ComponentName="gridDashboardItem1" Name="Grid" DataSource="objectDataSource1">
+      <DataItems>
+        <Dimension DataMember="UID" DefaultId="DataItem0" />
+        <Dimension DataMember="Name" DefaultId="DataItem1" />
+        <Dimension DataMember="ParentUID" DefaultId="DataItem2" />
+        <Dimension DataMember="StartDate" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem3" />
+        <Dimension DataMember="FinishDate" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem4" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem4" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutGroup Orientation="Vertical">
+        <LayoutItem DashboardItem="customItemDashboardItem1" />
+        <LayoutItem DashboardItem="gridDashboardItem1" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
