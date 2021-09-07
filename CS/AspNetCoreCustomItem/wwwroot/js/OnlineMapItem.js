@@ -93,7 +93,7 @@
     };
 
     function OnlineMapItemViewer(model, $container, options) {
-        var parent = Dashboard.CustomItemViewer.call(this, model, $container, options);
+        DevExpress.Dashboard.CustomItemViewer.call(this, model, $container, options);
         this.mapViewer = null;
     }
     OnlineMapItemViewer.prototype = Object.create(Dashboard.CustomItemViewer.prototype);
@@ -130,7 +130,7 @@
     };
 
     OnlineMapItemViewer.prototype.renderContent = function ($element, changeExisting) {
-        var markers = [],
+        let markers = [],
             routes = [],
             mode = this.getPropertyValue('DisplayMode'),
             showMarkers = mode === 'Markers' || mode === 'MarkersAndRoutes' || this.canMasterFilter(),
@@ -154,29 +154,29 @@
                 }
             });
         }
-        var autoAdjust = markers.length > 0 || routes.length > 0,
-            options = {
-                provider: this.getPropertyValue('Provider').toLowerCase(),
-                type: this.getPropertyValue('Type').toLowerCase(),
-                controls: true,
-                zoom: autoAdjust ? 1000 : 1,
-                autoAdjust: autoAdjust,
-                width: this.contentWidth(),
-                height: this.contentHeight(),
-                // Use the template below to authenticate the application within the required map provider.
-                //key: { 
-                //    bing: 'BINGAPIKEY',
-                //    google: 'GOOGLEAPIKEY'
-                //},             
-                markers: markers,
-                routes: routes.length > 0 ? [{
-                    weight: 6,
-                    color: 'blue',
-                    opacity: 0.5,
-                    mode: '',
-                    locations: routes
-                }] : []
-            };
+        let autoAdjust = markers.length > 0 || routes.length > 0,
+        options = {
+            provider: this.getPropertyValue('Provider').toLowerCase(),
+            type: this.getPropertyValue('Type').toLowerCase(),
+            controls: true,
+            zoom: autoAdjust ? 1000 : 1,
+            autoAdjust: autoAdjust,
+            width: this.contentWidth(),
+            height: this.contentHeight(),
+            // Use the template below to authenticate the application within the required map provider.
+            //key: { 
+            //    bing: 'BINGAPIKEY',
+            //    google: 'GOOGLEAPIKEY'
+            //},             
+            markers: markers,
+            routes: routes.length > 0 ? [{
+                weight: 6,
+                color: 'blue',
+                opacity: 0.5,
+                mode: '',
+                locations: routes
+            }] : []
+        };
         if (changeExisting && this.mapViewer) {
             this.mapViewer.option(options);
         }
@@ -188,11 +188,11 @@
 
     function OnlineMapItem(dashboardControl) {
         Dashboard.ResourceManager.registerIcon(svgIcon);
-        this.name = "OnlineMapCustomItem",
-            this.metaData = onlineMapMetadata,
-            this.createViewerItem = function (model, $element, content) {
-                return new OnlineMapItemViewer(model, $element, content);
-            };
+        this.name = "onlineMapItem";
+        this.metaData = onlineMapMetadata;
+        this.createViewerItem = function (model, $element, content) {
+            return new OnlineMapItemViewer(model, $element, content);
+        };
     }
 
     return OnlineMapItem;

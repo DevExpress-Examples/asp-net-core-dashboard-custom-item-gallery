@@ -58,8 +58,8 @@
 
     function WebPageItem(dashboardControl) {
         DevExpress.Dashboard.ResourceManager.registerIcon(svgIcon);
-        this.name = "WebPage",
-        this.metaData = webPageMeta,
+        this.name = "webPageItem";
+        this.metaData = webPageMeta;
         this.createViewerItem = function (model, $element, content) {
             return new WebPageItemViewer(model, $element, content);
         }

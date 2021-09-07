@@ -35,7 +35,7 @@
     </Parameter>
   </Parameters>
   <Items>
-    <CustomItem ComponentName="customItemDashboardItem2" Name="Polar Chart" DataSource="DataSource1" DataMember="SalesPerson" CustomItemType="PolarChart">
+    <CustomItem ComponentName="customItemDashboardItem2" Name="Polar Chart" DataSource="DataSource1" DataMember="SalesPerson" CustomItemType="polarChartItem">
       <InteractivityOptions MasterFilterMode="Single" />
       <DataItems>
         <Measure DataMember="ExtendedPrice" SummaryType="Count" DefaultId="DataItem0" />
@@ -89,7 +89,7 @@
         <customMeasure ItemType="Measure" DefaultId="DataItem1" />
       </CustomMetadata>
     </CustomItem>
-    <CustomItem ComponentName="customItemDashboardItem1" Name="Parameters" ShowCaption="false" DataSource="DataSource1" DataMember="SalesPerson" CustomItemType="Parameter Item">
+    <CustomItem ComponentName="customItemDashboardItem1" Name="Parameters" ShowCaption="false" DataSource="DataSource1" DataMember="SalesPerson" CustomItemType="parameterItem">
       <CustomProperties>
         <automaticUpdates>On</automaticUpdates>
       </CustomProperties>

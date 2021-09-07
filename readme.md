@@ -1,6 +1,6 @@
 # Dashboard for ASP.NET Core - Custom Item Gallery
 
-The example contains the source code of custom items you can use in your Web Dashboard application. This example contains three dashboards with custom items.
+The example contains the source code of custom items you can use in your Web Dashboard application.
 
 <!-- default file list -->
 
@@ -17,6 +17,8 @@ The example contains the source code of custom items you can use in your Web Das
 <!-- default file list end -->
 
 ## Country Sales Dashboard
+
+The dashboard displays product sales for the selected category. The Country parameter filters data by a country.
 
 This dashboard contains the following custom items:
 
@@ -58,6 +60,8 @@ A custom **Parameter** item renders [dashboard parameter dialog](https://docs.de
 
 ## Country Info Dashboard
 
+The dashboard displays information from Wikipedia for the selected country.
+
 This dashboard contains the following custom items:
 
 ### Online Map
@@ -84,6 +88,8 @@ A custom **Web Page** item displays a single web page or a set of pages. You can
 
 
 ## Tasks Dashboard
+
+The dashboard displays tasks. Select the task to display detailed information in the Grid.
 
 This dashboard contains the following custom items:
 

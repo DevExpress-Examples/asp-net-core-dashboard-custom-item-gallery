@@ -11,7 +11,7 @@
     </ExcelDataSource>
   </DataSources>
   <Items>
-    <CustomItem ComponentName="customItemDashboardItem1" Name="Online Map" DataSource="excelDataSource1" CustomItemType="OnlineMapCustomItem">
+    <CustomItem ComponentName="customItemDashboardItem1" Name="Online Map" DataSource="excelDataSource1" CustomItemType="onlineMapItem">
       <CustomProperties>
         <Type>RoadMap</Type>
       </CustomProperties>
@@ -37,7 +37,7 @@
         <Longitude ItemType="Dimension" DefaultId="DataItem1" />
       </CustomMetadata>
     </CustomItem>
-    <CustomItem ComponentName="customItemDashboardItem2" Name="Web Page" DataSource="excelDataSource1" CustomItemType="WebPage">
+    <CustomItem ComponentName="customItemDashboardItem2" Name="Web Page" DataSource="excelDataSource1" CustomItemType="webPageItem">
       <DataItems>
         <Dimension DataMember="Country" DefaultId="DataItem0" />
       </DataItems>

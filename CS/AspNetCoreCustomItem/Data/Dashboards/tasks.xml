@@ -7,7 +7,7 @@
     </ObjectDataSource>
   </DataSources>
   <Items>
-    <CustomItem ComponentName="customItemDashboardItem1" Name="Gantt Chart" DataSource="objectDataSource1" CustomItemType="ganttCustomItem">
+    <CustomItem ComponentName="customItemDashboardItem1" Name="Gantt Chart" DataSource="objectDataSource1" CustomItemType="ganttItem">
       <InteractivityOptions MasterFilterMode="Single" />
       <DataItems>
         <Dimension DataMember="UID" DefaultId="DataItem0" />

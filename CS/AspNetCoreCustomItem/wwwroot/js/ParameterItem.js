@@ -92,7 +92,8 @@
     ParameterItemViewer.prototype.renderContent = function ($element, changeExisting) {
         var element = $element.get(0);
         if (!changeExisting) {
-            element.innerHTML = '';
+            while (element.firstChild)
+                element.removeChild(element.firstChild);
             this.buttons.forEach(button => button.dispose());
             element.style.overflow = 'auto';
 
@@ -100,9 +101,9 @@
             element.appendChild(this.gridContainer);
             this._generateParametersContent();
             this.buttonContainer = document.createElement('div');
-            this.buttonContainer.style.height = buttonsStyle.containerHeight + 'px',
-                this.buttonContainer.style.width = buttonsStyle.width * 2 + buttonsStyle.marginRight * 2 + 'px',
-                this.buttonContainer.style.cssFloat = 'right'
+            this.buttonContainer.style.height = buttonsStyle.containerHeight + 'px';
+            this.buttonContainer.style.width = buttonsStyle.width * 2 + buttonsStyle.marginRight * 2 + 'px';
+            this.buttonContainer.style.cssFloat = 'right';
 
             element.appendChild(this.buttonContainer);
             this.buttons.push(this._createButton(this.buttonContainer, "Reset", () => {
@@ -185,15 +186,15 @@
 
     function ParameterItem(dashboardControl) {
         DevExpress.Dashboard.ResourceManager.registerIcon(svgIcon);
-        this.name = "Parameter Item",
-            this.metaData = parameterMetadata,
-            this.createViewerItem = function (model, $element, content) {
-                var parametersExtension = dashboardControl.findExtension("dashboard-parameter-dialog");
-                if (!parametersExtension) {
-                    throw Error('The "dashboard-parameter-dialog" extension does not exist. To register this extension, call the DashboardControl.registerExtension method and pass the extension name.');
-                }
-                return new ParameterItemViewer(model, $element, content, parametersExtension);
+        this.name = "parameterItem";
+        this.metaData = parameterMetadata;
+        this.createViewerItem = function (model, $element, content) {
+            var parametersExtension = dashboardControl.findExtension("dashboard-parameter-dialog");
+            if (!parametersExtension) {
+                throw Error('The "dashboard-parameter-dialog" extension does not exist. To register this extension, call the DashboardControl.registerExtension method and pass the extension name.');
             }
+            return new ParameterItemViewer(model, $element, content, parametersExtension);
+        }
     };
 
     return ParameterItem;

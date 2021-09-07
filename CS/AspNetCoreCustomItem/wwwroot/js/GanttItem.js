@@ -3,7 +3,7 @@
 
     const svgIcon = '<svg id="ganttItemIcon" viewBox="0 0 24 24"><path stroke="#ffffff" fill="#f442ae" d="M12 2 L2 22 L22 22 Z" /></svg>';
 
-    const ganttItemMetaData = {
+    const ganttItemMetadata = {
         bindings: [{
             propertyName: 'ID',
             dataItemType: 'Dimension',
@@ -140,8 +140,8 @@
 
     function GanttItem(dashboardControl) {
         Dashboard.ResourceManager.registerIcon(svgIcon);
-        this.name = "ganttCustomItem",
-        this.metaData = ganttItemMetaData,
+        this.name = "ganttItem";
+        this.metaData = ganttItemMetadata;
         this.createViewerItem = function (model, $element, content) {
             return new GanttItemViewer(model, $element, content);
         }
