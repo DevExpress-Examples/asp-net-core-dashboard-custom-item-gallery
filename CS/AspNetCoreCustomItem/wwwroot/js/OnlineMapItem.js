@@ -154,7 +154,11 @@
                 }
             });
         }
+<<<<<<< HEAD
         let autoAdjust = markers.length > 0 || routes.length > 0,
+=======
+        var autoAdjust = markers.length > 0 || routes.length > 0,
+>>>>>>> 683a0883ec5477a026fd750884720e28cc97f3ab
         options = {
             provider: this.getPropertyValue('Provider').toLowerCase(),
             type: this.getPropertyValue('Type').toLowerCase(),

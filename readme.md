@@ -1,18 +1,21 @@
 # Dashboard for ASP.NET Core - Custom Item Gallery
 
 The example contains the source code of custom items you can use in your Web Dashboard application.
+<<<<<<< HEAD
 
+=======
+>>>>>>> 683a0883ec5477a026fd750884720e28cc97f3ab
 <!-- default file list -->
 
 ## Files to Look At
 
-* [SimpleTableItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/SimpleTableItem.js)
-* [PolarChartItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/PolarChartItem.js)
-* [ParameterItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/ParameterItem.js)
-* [OnlineMapItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/OnlineMapItem.js)
-* [WebPageItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/WebPageItem.js)
-* [GanttItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/GanttItem.js)
-* [_Layout.cshtml](CS/AspNetCoreCustomItemTutorials/Pages/_Layout.cshtml)
+* [SimpleTableItem.js](CS/AspNetCoreCustomItem/wwwroot/js/SimpleTableItem.js)
+* [PolarChartItem.js](CS/AspNetCoreCustomItem/wwwroot/js/PolarChartItem.js)
+* [ParameterItem.js](CS/AspNetCoreCustomItem/wwwroot/js/ParameterItem.js)
+* [OnlineMapItem.js](CS/AspNetCoreCustomItem/wwwroot/js/OnlineMapItem.js)
+* [WebPageItem.js](CS/AspNetCoreCustomItem/wwwroot/js/WebPageItem.js)
+* [GanttItem.js](CS/AspNetCoreCustomItem/wwwroot/js/GanttItem.js)
+* [_Layout.cshtml](CS/AspNetCoreCustomItem/Pages/_Layout.cshtml)
 
 <!-- default file list end -->
 
@@ -25,7 +28,7 @@ This dashboard contains the following custom items:
 
 ### Simple Table
 
-**View Script**: [SimpleTableItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/SimpleTableItem.js)
+**View Script**: [SimpleTableItem.js](CS/AspNetCoreCustomItem/wwwroot/js/SimpleTableItem.js)
 
 A custom **Simple Table** item renders data from the measure / dimensions as an HTML table. You can use the Simple Table as a detail item along with the Master-Filtering feature. This custom item supports the following setting that you can configure in the Web Dashboard UI:
 
@@ -36,7 +39,7 @@ A custom **Simple Table** item renders data from the measure / dimensions as an 
 
 ### Polar Chart Item
 
-**View Script**: [PolarChartItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/PolarChartItem.js)
+**View Script**: [PolarChartItem.js](CS/AspNetCoreCustomItem/wwwroot/js/PolarChartItem.js)
 
 A custom **Polar Chart** item that allows you to use the [dxPolarChart](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxPolarChart/) DevExtreme widget in your dashboards. This item supports the following settings that you can configure in the Web Dashboard UI:
 
@@ -47,7 +50,7 @@ A custom **Polar Chart** item that allows you to use the [dxPolarChart](https://
 
 ### Parameter Item
 
-**View Script**: [ParameterItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/ParameterItem.js)
+**View Script**: [ParameterItem.js](CS/AspNetCoreCustomItem/wwwroot/js/ParameterItem.js)
 
 A custom **Parameter** item renders [dashboard parameter dialog](https://docs.devexpress.com/Dashboard/117571) content inside the dashboard layout and allows you to edit and submit parameter values. This item supports the following settings that you can configure in the Web Dashboard UI:
 
@@ -66,7 +69,7 @@ This dashboard contains the following custom items:
 
 ### Online Map
 
-**View Script**: [OnlineMapItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/OnlineMapItem.js)
+**View Script**: [OnlineMapItem.js](CS/AspNetCoreCustomItem/wwwroot/js/OnlineMapItem.js)
 
 A custom **Online Map** item allows you to place callouts on Google or Bing maps using geographical coordinates. The [dxMap](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxMap/) is used as an underlying widget. This custom item supports the following settings that you can configure in the Web Dashboard UI:
 
@@ -78,7 +81,7 @@ A custom **Online Map** item allows you to place callouts on Google or Bing maps
 
 ### Web Page
 
-**View Script**: [WebPageItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/WebPageItem.js)
+**View Script**: [WebPageItem.js](CS/AspNetCoreCustomItem/wwwroot/js/WebPageItem.js)
 
 A custom **Web Page** item displays a single web page or a set of pages. You can use the Web Page as a detail item along with the Master-Filtering feature. This custom item supports the following setting that you can configure in the Web Dashboard UI:
 
@@ -96,13 +99,15 @@ This dashboard contains the following custom items:
 ### Gannt Item
 
 
-**View Script**: [GanttItem.js](CS/AspNetCoreCustomItemTutorials/wwwroot/js/GanttItem.js)
+**View Script**: [GanttItem.js](CS/AspNetCoreCustomItem/wwwroot/js/GanttItem.js)
 
 A custom **Gannt** item displays the task flow and dependencies between tasks. This item uses [dxGantt](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxGantt/) as an underlying widget.
 
 
 ![gantt-item](images/gantt-item.png)
 
+## License
+These extensions are distributed under the **MIT** license (free and open-source), but can only be used with a commercial DevExpress Dashboard software product. You can [review the license terms](https://www.devexpress.com/Support/EULAs/NetComponents.xml) or [download a free trial version](https://go.devexpress.com/DevExpressDownload_UniversalTrial.aspx) of the Dashboard suite at [DevExpress.com](https://www.devexpress.com).
 
 ## Documentation
 
@@ -113,6 +118,3 @@ A custom **Gannt** item displays the task flow and dependencies between tasks. T
 
 - [Dashboard for ASP.NET Core - Custom Item Tutorials](https://github.com/DevExpress-Examples/asp-net-core-dashboard-custom-item-tutorials)
 - [Dashboard for React - Custom Item Tutorials](https://github.com/DevExpress-Examples/dashboard-react-app-custom-item-tutorials)
-
-## License
-These extensions are distributed under the **MIT** license (free and open-source), but can only be used with a commercial DevExpress Dashboard software product. You can [review the license terms](https://www.devexpress.com/Support/EULAs/NetComponents.xml) or [download a free trial version](https://go.devexpress.com/DevExpressDownload_UniversalTrial.aspx) of the Dashboard suite at [DevExpress.com](https://www.devexpress.com).
