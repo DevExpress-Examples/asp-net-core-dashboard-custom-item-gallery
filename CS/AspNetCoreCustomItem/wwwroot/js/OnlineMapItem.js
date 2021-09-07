@@ -105,7 +105,7 @@
     };
 
     OnlineMapItemViewer.prototype._updateSelection = function () {
-        var markers = this.mapViewer.option('markers');
+        let markers = this.mapViewer.option('markers');
         markers.forEach(marker => {
             marker.iconSrc = this.isSelected(marker.tag) ? "https://js.devexpress.com/Demos/RealtorApp/images/map-marker.png" : null;
         });
