@@ -1,7 +1,7 @@
 ﻿var GanttCustomItem = (function () {
     const Dashboard = DevExpress.Dashboard;
 
-    const svgIcon = '<svg id="ganttItemIcon" viewBox="0 0 24 24"><path stroke="#ffffff" fill="#f442ae" d="M12 2 L2 22 L22 22 Z" /></svg>';
+    const svgIcon = '<svg id="simpleTableIcon" viewBox="0 0 24 24"><path fill="#42ABE3" d="M12 2 L2 22 L22 22 Z" /></svg>';
 
     const ganttItemMetadata = {
         bindings: [{
