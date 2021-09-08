@@ -2,7 +2,13 @@
     const CustomItem = DevExpress.Dashboard.Model.CustomItem;
     const FormItemTemplates = DevExpress.Dashboard.Designer.FormItemTemplates;
 
-    const svgIcon = '<svg id="simpleTableIcon" viewBox="0 0 24 24"><path fill="#39A866" d="M12 2 L2 22 L22 22 Z" /></svg>';
+    const svgIcon = `<?xml version="1.0" encoding="utf-8"?>
+        <svg version="1.1" id="simpleTableIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	         viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+        <path class="dx-dashboard-contrast-icon" d="M21,2H3C2.5,2,2,2.5,2,3v18c0,0.5,0.5,1,1,1h18c0.5,0,1-0.5,1-1V3
+	        C22,2.5,21.5,2,21,2z M14,4v4h-4V4H14z M10,10h4v4h-4V10z M4,4h4v4H4V4z M4,10h4v4H4V10z M4,20v-4h4v4H4z M10,20v-4h4v4H10z M20,20
+	        h-4v-4h4V20z M20,14h-4v-4h4V14z M20,8h-4V4h4V8z"/>
+        </svg>`;
 
     const simpleTableMetadata = {        
         bindings: [{
@@ -15,12 +21,16 @@
             dataItemType: 'Measure',
             displayName: "Custom Measure"
         }],
-
         customProperties: [{
             ownerType: CustomItem,
             propertyName: 'showHeaders',
             valueType: 'string',
             defaultValue: 'Auto',
+        }, {
+            ownerType: CustomItem,
+            propertyName: 'textColor',
+            valueType: 'string',
+            defaultValue: 'Dark',
         }],
         optionsPanelSections: [{
             title: "Custom Options",
@@ -29,7 +39,14 @@
                 template: FormItemTemplates.buttonGroup,
                 editorOptions: {
                     items: [{ text: 'Auto' }, { text: 'Off' }, { text: 'On' }],
-                },
+                }
+            },{
+                dataField: 'textColor',
+                label: { text: 'Text Color' },
+                template: FormItemTemplates.buttonGroup,
+                editorOptions: {
+                    items: [{ text: 'Light' }, { text: 'Dark' }]
+                }
             }]
         }],        
         icon: 'simpleTableIcon',
@@ -58,6 +75,13 @@
         }
         this._update(this.getPropertyValue('showHeaders'));
     };
+
+    SimpleTableItemViewer.prototype._getTextColor = function() {
+        switch (this.getPropertyValue('textColor')) {
+            case 'Light': return "gray";
+            case 'Dark': return "black";
+        }
+    };
     
     SimpleTableItemViewer.prototype._update = function (mode) {
         while (this.tableElt.firstChild)
@@ -78,8 +102,9 @@
 
         rowValues.forEach(text => {
             const cell = document.createElement(isHeader ? 'th' : 'td');
-            cell.style.padding = '3px';
+            cell.style.padding = '3px';            
             cell.innerText = text;
+            cell.style.color = this._getTextColor();
             row.appendChild(cell);
         });
 

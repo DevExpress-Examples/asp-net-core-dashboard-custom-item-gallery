@@ -97,11 +97,11 @@
   </Items>
   <LayoutTree>
     <LayoutGroup>
-      <LayoutGroup Orientation="Vertical" Weight="0.6186060583046931">
-        <LayoutItem DashboardItem="customItemDashboardItem1" Weight="0.23247642413652175" />
-        <LayoutItem DashboardItem="customItemDashboardItem3" Weight="1.1668486602279327" />
+      <LayoutGroup Orientation="Vertical" Weight="0.6332268589547876">
+        <LayoutItem DashboardItem="customItemDashboardItem1" Weight="0.2636371668109084" />
+        <LayoutItem DashboardItem="customItemDashboardItem3" Weight="1.135687917553546" />
       </LayoutGroup>
-      <LayoutItem DashboardItem="customItemDashboardItem2" Weight="1.9820688573308527" />
+      <LayoutItem DashboardItem="customItemDashboardItem2" Weight="1.9674480566807582" />
     </LayoutGroup>
   </LayoutTree>
 </Dashboard>

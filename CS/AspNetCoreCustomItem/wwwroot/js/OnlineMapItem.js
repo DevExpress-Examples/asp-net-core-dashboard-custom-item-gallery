@@ -5,11 +5,10 @@
     const dxMap = DevExpress.ui.dxMap;
 
     const svgIcon = `<?xml version="1.0" encoding="utf-8"?>
-        <svg version="1.1" id="onlineMapItemIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	    viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
-            <path class="dx_darkgray" d="M12,1C8.1,1,5,4.1,5,8c0,3.9,3,10,7,15c4-5,7-11.1,7-15C19,4.1,15.9,1,12,1z M12,12c-2.2,0-4-1.8-4-4
+        <svg version="1.1" id="onlineMapItemIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+            <path class="dx-dashboard-contrast-icon" d="M12,1C8.1,1,5,4.1,5,8c0,3.9,3,10,7,15c4-5,7-11.1,7-15C19,4.1,15.9,1,12,1z M12,12c-2.2,0-4-1.8-4-4
 	            c0-2.2,1.8-4,4-4s4,1.8,4,4C16,10.2,14.2,12,12,12z"/>
-            <circle class="dx_red" cx="12" cy="8" r="2"/>
+            <circle class="dx-dashboard-accent-icon" cx="12" cy="8" r="2"/>
         </svg>`;
     const onlineMapMetadata = {
         bindings: [{
@@ -105,7 +104,7 @@
     };
 
     OnlineMapItemViewer.prototype._updateSelection = function () {
-        let markers = this.mapViewer.option('markers');
+        var markers = this.mapViewer.option('markers');
         markers.forEach(marker => {
             marker.iconSrc = this.isSelected(marker.tag) ? "https://js.devexpress.com/Demos/RealtorApp/images/map-marker.png" : null;
         });
@@ -137,8 +136,8 @@
             showRoutes = mode === 'Routes' || mode === 'MarkersAndRoutes';
         if (this.getBindingValue('Latitude').length > 0 && this.getBindingValue('Longitude').length > 0) {
             this.iterateData(row => {
-                let latitude = row.getValue('Latitude')[0];
-                let longitude = row.getValue('Longitude')[0];
+                var latitude = row.getValue('Latitude')[0];
+                var longitude = row.getValue('Longitude')[0];
                 if (latitude && longitude) {
                     if (showMarkers) {
                         markers.push({

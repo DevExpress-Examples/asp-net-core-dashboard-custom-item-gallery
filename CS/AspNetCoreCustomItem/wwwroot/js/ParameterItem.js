@@ -11,7 +11,22 @@
         marginTop: 10
     };
 
-    const svgIcon = '<svg id="parameterItemIcon" viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="11" fill="#39A866" /></svg>';
+    const svgIcon = `<?xml version="1.0" encoding="utf-8"?>
+        <svg version="1.1" id="parameterItemIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	         viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+        <g class="st0">
+	        <path class="dx-dashboard-contrast-icon" d="M6,12c0.4,0,0.7,0.1,1,0.2V5c0-0.6-0.4-1-1-1S5,4.4,5,5v7.2
+		        C5.3,12.1,5.6,12,6,12z M6,18c-0.4,0-0.7-0.1-1-0.2V19c0,0.6,0.4,1,1,1s1-0.4,1-1v-1.2C6.7,17.9,6.4,18,6,18z M12,6
+		        c0.4,0,0.7,0.1,1,0.2V5c0-0.6-0.4-1-1-1s-1,0.4-1,1v1.2C11.3,6.1,11.6,6,12,6z M12,12c-0.4,0-0.7-0.1-1-0.2V19c0,0.6,0.4,1,1,1
+		        s1-0.4,1-1v-7.2C12.7,11.9,12.4,12,12,12z M18,17c-0.4,0-0.7-0.1-1-0.2V19c0,0.6,0.4,1,1,1s1-0.4,1-1v-2.2C18.7,16.9,18.4,17,18,17
+		        z M18,11c0.4,0,0.7,0.1,1,0.2V5c0-0.6-0.4-1-1-1s-1,0.4-1,1v6.2C17.3,11.1,17.6,11,18,11z"/>
+        </g>
+        <path class="dx-dashboard-accent-icon" d="M6,12c-1.7,0-3,1.3-3,3s1.3,3,3,3s3-1.3,3-3S7.7,12,6,12z M6,16c-0.6,0-1-0.4-1-1
+	        s0.4-1,1-1s1,0.4,1,1S6.6,16,6,16z M12,6c-1.7,0-3,1.3-3,3s1.3,3,3,3s3-1.3,3-3S13.7,6,12,6z M12,10c-0.6,0-1-0.4-1-1s0.4-1,1-1
+	        s1,0.4,1,1S12.6,10,12,10z M18,11c-1.7,0-3,1.3-3,3s1.3,3,3,3s3-1.3,3-3S19.7,11,18,11z M18,15c-0.6,0-1-0.4-1-1s0.4-1,1-1
+	        s1,0.4,1,1S18.6,15,18,15z"/>
+        </svg>`;
+
     const parameterMetadata = {
         customProperties: [{
             ownerType: Model.CustomItem,

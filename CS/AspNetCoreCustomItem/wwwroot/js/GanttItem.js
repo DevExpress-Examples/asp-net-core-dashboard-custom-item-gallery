@@ -1,7 +1,11 @@
 ﻿var GanttCustomItem = (function () {
     const Dashboard = DevExpress.Dashboard;
 
-    const svgIcon = '<svg id="simpleTableIcon" viewBox="0 0 24 24"><path fill="#42ABE3" d="M12 2 L2 22 L22 22 Z" /></svg>';
+    const svgIcon = `<? xml version = "1.0" encoding = "utf-8"?>
+        <svg version="1.1" id="ganttItemIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+            <path class="dx-dashboard-contrast-icon" d="M23,2c0-0.6-0.4-1-1-1H2C1.4,1,1,1.4,1,2v20c0,0.6,0.4,1,1,1h20c0.6,0,1-0.4,1-1 V2z M21,21H3V3h18V21z"/>
+            <path class="dx-dashboard-accent-icon" d="M12,9H5V5h7V9z M19,10H9v4h10V10z M15,15H7v4h8V15z"/>
+        </svg>`;
 
     const ganttItemMetadata = {
         bindings: [{
