@@ -70,7 +70,7 @@ A custom **Online Map** item allows you to place callouts on Google or Bing maps
 ![online-map-item](images/online-map-item.png)
 
 - **Provider** - Specifies whether to show Google or Bing maps.
-- **Type** - Specifies the map type. You can choose between RoadMap, Satellite or Hybrid.
+- **Type** - Specifies the map type. You can choose between `RoadMap`, `Satellite` or `Hybrid`.
 - **Display Mode** - Specifies whether to show markers or routes.
 
 ### Web Page
