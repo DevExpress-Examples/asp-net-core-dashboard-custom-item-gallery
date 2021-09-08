@@ -59,8 +59,7 @@
     PolarChartItemViewer.prototype.constructor = PolarChartItemViewer;
 
     PolarChartItemViewer.prototype._getDataSource = function () {
-        var data = [];
-
+        let data = [];
         if (this.getBindingValue('measureValue').length > 0) {
             this.iterateData(function (dataRow) {
                 var dataItem = {
@@ -83,11 +82,9 @@
     };
 
     PolarChartItemViewer.prototype._getDxPolarWidgetSettings = function () {
-        var _this = this;
-
-        var series = [];
-        var dataSource = this._getDataSource();
-        var measureValueBindings = this.getBindingValue('measureValue');
+        let series = [];
+        let dataSource = this._getDataSource();
+        let measureValueBindings = this.getBindingValue('measureValue');
 
         for (var i = 0; i < measureValueBindings.length; i++) {
             series.push({ valueField: "measureValue" + i, name: measureValueBindings[i].displayName() });
@@ -111,9 +108,9 @@
             tooltip: {
                 enabled: false
             },
-            onPointClick: function (e) {
+            onPointClick: (e) => {
                 var point = e.target;
-                _this.setMasterFilter(point.data.clientDataRow);
+                this.setMasterFilter(point.data.clientDataRow);
             }
         };
     };
@@ -136,7 +133,7 @@
     };
 
     PolarChartItemViewer.prototype.updateSelection = function () {
-        var series = this.dxPolarWidget.getAllSeries();
+        let series = this.dxPolarWidget.getAllSeries();
 
         for (var i = 0; i < series.length; i++) {
             var points = series[i].getAllPoints()
