@@ -70,7 +70,9 @@
       </CustomProperties>
       <DataItems>
         <Dimension DataMember="ProductName" DefaultId="DataItem0" />
-        <Measure DataMember="ExtendedPrice" SummaryType="Count" DefaultId="DataItem1" />
+        <Measure DataMember="ExtendedPrice" Name="Extended Price" SummaryType="Count" DefaultId="DataItem1">
+          <NumericFormat FormatType="Currency" />
+        </Measure>
       </DataItems>
       <SliceTables>
         <SliceTable Name="SliceTable1">
@@ -97,11 +99,11 @@
   </Items>
   <LayoutTree>
     <LayoutGroup>
-      <LayoutGroup Orientation="Vertical" Weight="0.6332268589547876">
-        <LayoutItem DashboardItem="customItemDashboardItem1" Weight="0.2636371668109084" />
-        <LayoutItem DashboardItem="customItemDashboardItem3" Weight="1.135687917553546" />
+      <LayoutGroup Orientation="Vertical" Weight="0.6364946928576967">
+        <LayoutItem DashboardItem="customItemDashboardItem1" Weight="0.18035884137205366" />
+        <LayoutItem DashboardItem="customItemDashboardItem3" Weight="0.7387267095406758" />
       </LayoutGroup>
-      <LayoutItem DashboardItem="customItemDashboardItem2" Weight="1.9674480566807582" />
+      <LayoutItem DashboardItem="customItemDashboardItem2" Weight="1.9641802227778489" />
     </LayoutGroup>
   </LayoutTree>
 </Dashboard>
