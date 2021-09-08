@@ -26,11 +26,12 @@ This dashboard contains the following custom items:
 
 **View Script**: [SimpleTableItem.js](CS/AspNetCoreCustomItem/wwwroot/js/SimpleTableItem.js)
 
-A custom **Simple Table** item renders data from the measure / dimensions as an HTML table. You can use the Simple Table as a detail item along with the Master-Filtering feature. This custom item supports the following setting that you can configure in the Web Dashboard UI:
+A custom **Simple Table** item renders data from the measure / dimensions as an HTML table. You can use the Simple Table as a detail item along with the Master-Filtering feature. This custom item supports the following settings that you can configure in the Web Dashboard UI:
 
 ![simple-table-item](images/simple-table-item.png)
 
-- **Show Headers** - Specifies whether to show the field headers in the table. The default value is Auto.
+- **Show Headers** - Specifies whether to show the field headers in the table. The default value is `Auto`.
+- **Text Color** - Allows you to change the text color. The default value is `Dark`.
 
 ### Polar Chart Item
 
@@ -69,7 +70,7 @@ A custom **Online Map** item allows you to place callouts on Google or Bing maps
 ![online-map-item](images/online-map-item.png)
 
 - **Provider** - Specifies whether to show Google or Bing maps.
-- **Type** - Specifies the map type. You can choose between RoadMap, Satellite or Hybrid.
+- **Type** - Specifies the map type. You can choose between `RoadMap`, `Satellite` or `Hybrid`.
 - **Display Mode** - Specifies whether to show markers or routes.
 
 ### Web Page
