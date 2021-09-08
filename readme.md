@@ -22,7 +22,6 @@ The dashboard displays product sales for the selected category. The Country para
 
 This dashboard contains the following custom items:
 
-
 ### Simple Table
 
 **View Script**: [SimpleTableItem.js](CS/AspNetCoreCustomItem/wwwroot/js/SimpleTableItem.js)
@@ -33,7 +32,6 @@ A custom **Simple Table** item renders data from the measure / dimensions as an 
 
 - **Show Headers** - Specifies whether to show the field headers in the table. The default value is Auto.
 
-
 ### Polar Chart Item
 
 **View Script**: [PolarChartItem.js](CS/AspNetCoreCustomItem/wwwroot/js/PolarChartItem.js)
@@ -43,7 +41,6 @@ A custom **Polar Chart** item that allows you to use the [dxPolarChart](https://
 ![polar-chart-item](images/polar-chart-item.png)
 
 - **Display Labels** - Specifies whether to show point labels.
-
 
 ### Parameter Item
 
@@ -56,7 +53,6 @@ A custom **Parameter** item renders [dashboard parameter dialog](https://docs.de
 - **Show Headers** - Specifies whether to show headers in the parameters table.
 - **Show Parameter Name** - Specifies whether to show the first column with parameter names.
 - **Automatic Updates** - Specifies whether a parameter item is updated automatically. When enabled, this option hides the 'Submit' and 'Reset' buttons.
-
 
 ## Country Info Dashboard
 
@@ -86,20 +82,17 @@ A custom **Web Page** item displays a single web page or a set of pages. You can
 
 - **URL** - Specifies a web page URL. You can set a single page as well as a set of pages (e.g., https://en.wikipedia.org/wiki/{0}). If you add a dimension and specify a placeholder, the data source field returns strings that will be inserted in the position of the {0} placeholder. Thus, the Web Page item joins the specified URL with the current dimension value and displays the page located by this address.
 
-
 ## Tasks Dashboard
 
 The dashboard displays tasks. Select the task to display detailed information in the Grid.
 
-This dashboard contains the following custom items:
+This dashboard contains the following custom item:
 
 ### Gannt Item
-
 
 **View Script**: [GanttItem.js](CS/AspNetCoreCustomItem/wwwroot/js/GanttItem.js)
 
 A custom **Gannt** item displays the task flow and dependencies between tasks. This item uses [dxGantt](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxGantt/) as an underlying widget.
-
 
 ![gantt-item](images/gantt-item.png)
 
@@ -115,3 +108,4 @@ These extensions are distributed under the **MIT** license (free and open-source
 
 - [Dashboard for ASP.NET Core - Custom Item Tutorials](https://github.com/DevExpress-Examples/asp-net-core-dashboard-custom-item-tutorials)
 - [Dashboard for React - Custom Item Tutorials](https://github.com/DevExpress-Examples/dashboard-react-app-custom-item-tutorials)
+- [Dashboard for React - Custom Item Gallery](https://github.com/DevExpress-Examples/dashboard-for-react-custom-item-gallery)
