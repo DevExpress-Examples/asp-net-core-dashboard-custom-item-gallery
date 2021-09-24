@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="en-US">
+  <Title Text="Departments" />
+  <DataSources>
+    <SqlDataSource Name="Departments" ComponentName="dashboardSqlDataSource1">
+      <Connection Name="localhost_Connection" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="Table">
+        <Tables>
+          <Table Name="Table" />
+        </Tables>
+        <Columns>
+          <Column Table="Table" Name="ID" />
+          <Column Table="Table" Name="ParentID" />
+          <Column Table="Table" Name="ImageIndex" />
+          <Column Table="Table" Name="Department" />
+          <Column Table="Table" Name="Budget" />
+          <Column Table="Table" Name="Location" />
+          <Column Table="Table" Name="Phone" />
+          <Column Table="Table" Name="LastOrder" />
+          <Column Table="Table" Name="Check" />
+        </Columns>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Details" DataSource="dashboardSqlDataSource1" DataMember="Table">
+      <DataItems>
+        <Dimension DataMember="Department" DefaultId="DataItem1" />
+        <Measure DataMember="Budget" DefaultId="DataItem0" />
+        <Dimension DataMember="Phone" DefaultId="DataItem2" />
+        <Dimension DataMember="Location" DefaultId="DataItem3" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridMeasureColumn>
+          <Measure DefaultId="DataItem0" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
+    <CustomItem ComponentName="customItemDashboardItem1" Name="Hierarchical Tree View" DataSource="dashboardSqlDataSource1" DataMember="Table" CustomItemType="hierarchicalTreeViewItem">
+      <InteractivityOptions IgnoreMasterFilters="true" MasterFilterMode="Multiple" />
+      <DataItems>
+        <Dimension DataMember="ID" DefaultId="DataItem0" />
+        <Dimension DataMember="ParentID" DefaultId="DataItem1" />
+        <Dimension DataMember="Department" DefaultId="DataItem2" />
+      </DataItems>
+      <SliceTables>
+        <SliceTable Name="SliceTable1">
+          <Dimensions>
+            <Dimension DefaultId="DataItem0" />
+            <Dimension DefaultId="DataItem1" />
+            <Dimension DefaultId="DataItem2" />
+          </Dimensions>
+        </SliceTable>
+      </SliceTables>
+      <InteractivityTargets>
+        <Dimension DefaultId="DataItem2" />
+      </InteractivityTargets>
+      <CustomMetadata>
+        <idBinding ItemType="Dimension" DefaultId="DataItem0" />
+        <parentIdBinding ItemType="Dimension" DefaultId="DataItem1" />
+        <dimensionsBinding ItemType="Dimension" DefaultId="DataItem2" />
+      </CustomMetadata>
+    </CustomItem>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Weight="100">
+      <LayoutItem DashboardItem="customItemDashboardItem1" Weight="50.361833288662545" />
+      <LayoutItem DashboardItem="gridDashboardItem1" Weight="136.45135352452425" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

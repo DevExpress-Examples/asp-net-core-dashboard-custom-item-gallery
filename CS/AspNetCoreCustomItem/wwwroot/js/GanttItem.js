@@ -1,4 +1,4 @@
-﻿var GanttCustomItem = (function () {
+﻿let GanttCustomItem = (function () {
     const Dashboard = DevExpress.Dashboard;
 
     const svgIcon = `<? xml version = "1.0" encoding = "utf-8"?>

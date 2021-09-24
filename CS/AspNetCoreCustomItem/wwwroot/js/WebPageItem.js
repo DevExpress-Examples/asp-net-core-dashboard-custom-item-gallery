@@ -1,4 +1,4 @@
-﻿var WebPageCustomItem = (function () {
+﻿let WebPageCustomItem = (function () {
     const svgIcon = `<?xml version="1.0" encoding="utf-8"?>        
         <svg version = "1.1" id = "webPageItemIcon" xmlns = "http://www.w3.org/2000/svg" xmlns: xlink = "http://www.w3.org/1999/xlink" x = "0px" y = "0px" viewBox = "0 0 24 24" style = "enable-background:new 0 0 24 24;" xml: space = "preserve" >
             <path class="dx-dashboard-contrast-icon" d="M20.7,4.7l-3.4-3.4C17.1,1.1,16.9,1,16.6,1H4C3.4,1,3,1.4,3,2v20c0,0.6,0.4,1,1,1h16

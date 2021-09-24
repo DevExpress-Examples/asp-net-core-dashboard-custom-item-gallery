@@ -1,0 +1,217 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:double" minOccurs="0" />
+                <xs:element name="ParentID" type="xs:double" minOccurs="0" />
+                <xs:element name="ImageIndex" type="xs:double" minOccurs="0" />
+                <xs:element name="Department" type="xs:string" minOccurs="0" />
+                <xs:element name="Budget" type="xs:decimal" minOccurs="0" />
+                <xs:element name="Location" type="xs:string" minOccurs="0" />
+                <xs:element name="Phone" type="xs:string" minOccurs="0" />
+                <xs:element name="LastOrder" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="Check" type="xs:boolean" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//Table" />
+        <xs:field xpath="ID" />
+      </xs:unique>
+    </xs:element>
+  </xs:schema>
+  <Table>
+    <ID>1</ID>
+    <ParentID>-1</ParentID>
+    <ImageIndex>0</ImageIndex>
+    <Department>Corporate Headquarters</Department>
+    <Budget>1000000</Budget>
+    <Location>Monterey</Location>
+    <Phone>(408) 555-1234</Phone>
+    <LastOrder>2008-02-15T00:00:00.0000000</LastOrder>
+    <Check>false</Check>
+  </Table>
+  <Table>
+    <ID>2</ID>
+    <ParentID>1</ParentID>
+    <ImageIndex>1</ImageIndex>
+    <Department>Sales and Marketing</Department>
+    <Budget>22000</Budget>
+    <Location>San Francisco</Location>
+    <Phone>(415) 555-1234</Phone>
+    <LastOrder>2006-03-05T00:00:00.0000000</LastOrder>
+    <Check>true</Check>
+  </Table>
+  <Table>
+    <ID>3</ID>
+    <ParentID>2</ParentID>
+    <ImageIndex>4</ImageIndex>
+    <Department>Field Office: Canada</Department>
+    <Budget>500000</Budget>
+    <Location>Toronto</Location>
+    <Phone>(416) 677-1000</Phone>
+    <LastOrder>2009-05-01T00:00:00.0000000</LastOrder>
+    <Check>false</Check>
+  </Table>
+  <Table>
+    <ID>4</ID>
+    <ParentID>2</ParentID>
+    <ImageIndex>4</ImageIndex>
+    <Department>Field Office: East Coast</Department>
+    <Budget>500000</Budget>
+    <Location>Boston</Location>
+    <Phone>(617) 555-4234</Phone>
+    <LastOrder>2011-05-05T00:00:00.0000000</LastOrder>
+    <Check>true</Check>
+  </Table>
+  <Table>
+    <ID>5</ID>
+    <ParentID>2</ParentID>
+    <ImageIndex>4</ImageIndex>
+    <Department>Pacific Rim Headquarters</Department>
+    <Budget>600000</Budget>
+    <Location>Kuaui</Location>
+    <Phone>(808) 555-1234</Phone>
+    <LastOrder>2007-05-25T00:00:00.0000000</LastOrder>
+    <Check>false</Check>
+  </Table>
+  <Table>
+    <ID>6</ID>
+    <ParentID>5</ParentID>
+    <ImageIndex>6</ImageIndex>
+    <Department>Field Office: Singapore</Department>
+    <Budget>300000</Budget>
+    <Location>Singapore</Location>
+    <Phone>(606) 555-5486</Phone>
+    <LastOrder>2009-07-15T00:00:00.0000000</LastOrder>
+    <Check>false</Check>
+  </Table>
+  <Table>
+    <ID>7</ID>
+    <ParentID>5</ParentID>
+    <ImageIndex>6</ImageIndex>
+    <Department>Field Office: Japan</Department>
+    <Budget>500000</Budget>
+    <Location>Tokyo</Location>
+    <Phone>(707) 555-1526</Phone>
+    <LastOrder>2008-08-05T00:00:00.0000000</LastOrder>
+    <Check>false</Check>
+  </Table>
+  <Table>
+    <ID>8</ID>
+    <ParentID>2</ParentID>
+    <ImageIndex>4</ImageIndex>
+    <Department>Marketing</Department>
+    <Budget>1500000</Budget>
+    <Location>San Francisco</Location>
+    <Phone>(415) 555-1234</Phone>
+    <LastOrder>2008-09-17T00:00:00.0000000</LastOrder>
+    <Check>true</Check>
+  </Table>
+  <Table>
+    <ID>9</ID>
+    <ParentID>1</ParentID>
+    <ImageIndex>2</ImageIndex>
+    <Department>Finance</Department>
+    <Budget>40000</Budget>
+    <Location>Monterey</Location>
+    <Phone>(408) 555-1234</Phone>
+    <LastOrder>2011-05-05T00:00:00.0000000</LastOrder>
+    <Check>true</Check>
+  </Table>
+  <Table>
+    <ID>10</ID>
+    <ParentID>1</ParentID>
+    <ImageIndex>3</ImageIndex>
+    <Department>Engineering</Department>
+    <Budget>1100000</Budget>
+    <Location>Monterey</Location>
+    <Phone>(408) 555-1234</Phone>
+    <LastOrder>2008-08-12T00:00:00.0000000</LastOrder>
+    <Check>true</Check>
+  </Table>
+  <Table>
+    <ID>11</ID>
+    <ParentID>10</ParentID>
+    <ImageIndex>5</ImageIndex>
+    <Department>Consumer Electronics Div.</Department>
+    <Budget>1150000</Budget>
+    <Location>Burlington, VT</Location>
+    <Phone>(802) 555-1234</Phone>
+    <LastOrder>2010-05-10T00:00:00.0000000</LastOrder>
+    <Check>true</Check>
+  </Table>
+  <Table>
+    <ID>12</ID>
+    <ParentID>11</ParentID>
+    <ImageIndex>6</ImageIndex>
+    <Department>Software Development</Department>
+    <Budget>40000</Budget>
+    <Location>Monterey</Location>
+    <Phone>(408) 555-1234</Phone>
+    <LastOrder>2008-08-05T00:00:00.0000000</LastOrder>
+    <Check>true</Check>
+  </Table>
+  <Table>
+    <ID>13</ID>
+    <ParentID>10</ParentID>
+    <ImageIndex>5</ImageIndex>
+    <Department>Software Products Div.</Department>
+    <Budget>1200000</Budget>
+    <Location>Monterey</Location>
+    <Phone>(408) 555-1234</Phone>
+    <LastOrder>2008-11-11T00:00:00.0000000</LastOrder>
+    <Check>true</Check>
+  </Table>
+  <Table>
+    <ID>14</ID>
+    <ParentID>13</ParentID>
+    <ImageIndex>6</ImageIndex>
+    <Department>Quality Assurance</Department>
+    <Budget>48000</Budget>
+    <Location>Monterey</Location>
+    <Phone>(408) 555-1234</Phone>
+    <LastOrder>2009-05-08T00:00:00.0000000</LastOrder>
+    <Check>false</Check>
+  </Table>
+  <Table>
+    <ID>15</ID>
+    <ParentID>13</ParentID>
+    <ImageIndex>6</ImageIndex>
+    <Department>Customer Support</Department>
+    <Budget>38000</Budget>
+    <Location>Monterey</Location>
+    <Phone>(408) 555-1234</Phone>
+    <LastOrder>2008-12-05T00:00:00.0000000</LastOrder>
+    <Check>false</Check>
+  </Table>
+  <Table>
+    <ID>16</ID>
+    <ParentID>13</ParentID>
+    <ImageIndex>6</ImageIndex>
+    <Department>Research and Development</Department>
+    <Budget>460000</Budget>
+    <Location>Burlington, VT</Location>
+    <Phone>(802) 555-1234</Phone>
+    <LastOrder>2008-10-15T00:00:00.0000000</LastOrder>
+    <Check>true</Check>
+  </Table>
+  <Table>
+    <ID>17</ID>
+    <ParentID>13</ParentID>
+    <ImageIndex>6</ImageIndex>
+    <Department>Customer Services</Department>
+    <Budget>850000</Budget>
+    <Location>Burlington, VT</Location>
+    <Phone>(802) 555-1234</Phone>
+    <LastOrder>2011-05-05T00:00:00.0000000</LastOrder>
+    <Check>true</Check>
+  </Table>
+</NewDataSet>

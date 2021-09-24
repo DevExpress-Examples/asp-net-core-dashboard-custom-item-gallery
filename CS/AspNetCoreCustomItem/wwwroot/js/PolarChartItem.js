@@ -1,4 +1,4 @@
-﻿var PolarChartCustomItem = (function () {
+﻿let PolarChartCustomItem = (function () {
     const Model = DevExpress.Dashboard.Model;
     const CustomItemViewer = DevExpress.Dashboard.CustomItemViewer;
     const dxPolarChart = DevExpress.viz.dxPolarChart;

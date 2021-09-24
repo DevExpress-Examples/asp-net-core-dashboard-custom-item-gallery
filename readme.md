@@ -12,13 +12,14 @@ The example contains the source code of custom items you can use in your Web Das
 * [OnlineMapItem.js](CS/AspNetCoreCustomItem/wwwroot/js/OnlineMapItem.js)
 * [WebPageItem.js](CS/AspNetCoreCustomItem/wwwroot/js/WebPageItem.js)
 * [GanttItem.js](CS/AspNetCoreCustomItem/wwwroot/js/GanttItem.js)
+* [HierarchicalTreeViewItem.js](CS/AspNetCoreCustomItem/wwwroot/js/HierarchicalTreeViewItem.js)
 * [_Layout.cshtml](CS/AspNetCoreCustomItem/Pages/_Layout.cshtml)
 
 <!-- default file list end -->
 
 ## Country Sales Dashboard
 
-The dashboard displays product sales for the selected category. The Country parameter filters data by a country.
+The dashboard displays product sales for the selected category. Use the Country parameter to filter data by a country. Select a category on the Polar Chart to show sales by products from this category in the table.
 
 This dashboard contains the following custom items:
 
@@ -96,6 +97,21 @@ This dashboard contains the following custom item:
 A custom **Gannt** item displays the task flow and dependencies between tasks. This item uses [dxGantt](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxGantt/) as an underlying widget.
 
 ![gantt-item](images/gantt-item.png)
+
+## Departments Dashboard
+
+The dashboard displays departmental data. Use the custom Tree View item to filter detailed information in the Grid.
+
+This dashboard contains the following custom item:
+
+### Hierarchical Tree View
+
+**View Script**: [HierarchicalTreeViewItem.js](CS/AspNetCoreCustomItem/wwwroot/js/HierarchicalTreeViewItem.js)
+
+A custom **Tree View** item can display hierarchical data. This item uses [dxTreeView](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxTreeView/) as an underlying widget.
+
+![hierachical-tree-view](images/hierachical-tree-view.png)
+
 
 ## License
 These extensions are distributed under the **MIT** license (free and open-source), but can only be used with a commercial DevExpress Dashboard software product. You can [review the license terms](https://www.devexpress.com/Support/EULAs/NetComponents.xml) or [download a free trial version](https://go.devexpress.com/DevExpressDownload_UniversalTrial.aspx) of the Dashboard suite at [DevExpress.com](https://www.devexpress.com).

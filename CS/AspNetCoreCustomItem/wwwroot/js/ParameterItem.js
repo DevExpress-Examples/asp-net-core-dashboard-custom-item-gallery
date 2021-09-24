@@ -1,4 +1,4 @@
-﻿var ParameterCustomItem = (function () {
+﻿let ParameterCustomItem = (function () {
     const Model = DevExpress.Dashboard.Model;
     const Designer = DevExpress.Dashboard.Designer;
 

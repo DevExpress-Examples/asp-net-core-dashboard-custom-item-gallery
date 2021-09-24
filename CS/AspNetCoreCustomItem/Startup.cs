@@ -3,6 +3,7 @@ using DevExpress.AspNetCore;
 using DevExpress.DashboardAspNetCore;
 using DevExpress.DashboardCommon;
 using DevExpress.DashboardWeb;
+using DevExpress.DataAccess.ConnectionParameters;
 using DevExpress.DataAccess.Excel;
 using DevExpress.DataAccess.Json;
 using DevExpress.DataAccess.Sql;
@@ -59,10 +60,23 @@ namespace AspNetCoreCustomItemGallery {
                 dataSourceStorage.RegisterDataSource("objectDataSource", objDataSource.SaveToXml());
 
                 configurator.DataLoading += Configurator_DataLoading;
+                configurator.ConfigureDataConnection += Configurator_ConfigureDataConnection; ;
                 configurator.SetDataSourceStorage(dataSourceStorage);
 
                 return configurator;
             });
+        }
+
+        private void Configurator_ConfigureDataConnection(object sender, ConfigureDataConnectionWebEventArgs e) {
+            if (e.DataSourceName.Contains("Departments")) {
+                Uri fileUri = new Uri(FileProvider.GetFileInfo("Data/Departments.json").PhysicalPath, UriKind.RelativeOrAbsolute);
+                JsonSourceConnectionParameters jsonParams = new JsonSourceConnectionParameters();
+                jsonParams.JsonSource = new UriJsonSource(fileUri);
+                e.ConnectionParameters = jsonParams;
+            }
+            if (e.DataSourceName == "Departments") {
+                e.ConnectionParameters = new XmlFileConnectionParameters() { FileName = FileProvider.GetFileInfo("Data/Departments.xml").PhysicalPath };
+            }
         }
 
         private void Configurator_DataLoading(object sender, DataLoadingWebEventArgs e) {
