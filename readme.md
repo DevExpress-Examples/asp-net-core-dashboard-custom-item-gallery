@@ -112,7 +112,6 @@ A custom **Tree View** item can display hierarchical data. This item uses [dxTre
 
 ![hierachical-tree-view](images/hierachical-tree-view.png)
 
-
 ## License
 These extensions are distributed under the **MIT** license (free and open-source), but can only be used with a commercial DevExpress Dashboard software product. You can [review the license terms](https://www.devexpress.com/Support/EULAs/NetComponents.xml) or [download a free trial version](https://go.devexpress.com/DevExpressDownload_UniversalTrial.aspx) of the Dashboard suite at [DevExpress.com](https://www.devexpress.com).
 
