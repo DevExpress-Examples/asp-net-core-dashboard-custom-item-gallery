@@ -66,7 +66,7 @@ This dashboard contains the following custom items:
 
 **View Script**: [OnlineMapItem.js](CS/AspNetCoreCustomItem/wwwroot/js/OnlineMapItem.js)
 
-A custom **Online Map** item allows you to place callouts on Google or Bing maps using geographical coordinates. The [dxMap](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxMap/) is used as an underlying widget. This custom item supports the following settings that you can configure in the Web Dashboard UI:
+A custom **Online Map** item allows you to place callouts on Google or Bing maps using geographical coordinates. The [dxMap](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxMap/) is used as an underlying UI component. This custom item supports the following settings that you can configure in the Web Dashboard UI:
 
 ![online-map-item](images/online-map-item.png)
 
@@ -78,7 +78,7 @@ A custom **Online Map** item allows you to place callouts on Google or Bing maps
 
 **View Script**: [WebPageItem.js](CS/AspNetCoreCustomItem/wwwroot/js/WebPageItem.js)
 
-A custom **Web Page** item displays a single web page or a set of pages. You can use the Web Page as a detail item along with the Master-Filtering feature. This custom item supports the following setting that you can configure in the Web Dashboard UI:
+A custom **Web Page** item displays a single web page or a set of pages. You can use the Web Page as a detail item along with the Master-Filtering feature. The content is rendered inside the Inline Frame element (`<iframe>`). This custom item supports the following setting that you can configure in the Web Dashboard UI:
 
 ![web-page-item](images/web-page-item.png)
 
@@ -94,7 +94,7 @@ This dashboard contains the following custom item:
 
 **View Script**: [GanttItem.js](CS/AspNetCoreCustomItem/wwwroot/js/GanttItem.js)
 
-A custom **Gannt** item displays the task flow and dependencies between tasks. This item uses [dxGantt](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxGantt/) as an underlying widget.
+A custom **Gannt** item displays the task flow and dependencies between tasks. This item uses [dxGantt](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxGantt/) as an underlying UI component.
 
 ![gantt-item](images/gantt-item.png)
 
@@ -108,7 +108,7 @@ This dashboard contains the following custom item:
 
 **View Script**: [HierarchicalTreeViewItem.js](CS/AspNetCoreCustomItem/wwwroot/js/HierarchicalTreeViewItem.js)
 
-A custom **Tree View** item can display hierarchical data. This item uses [dxTreeView](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxTreeView/) as an underlying widget.
+A custom **Tree View** item can display hierarchical data. This item uses [dxTreeView](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxTreeView/) as an underlying UI component.
 
 ![hierachical-tree-view](images/hierachical-tree-view.png)
 
