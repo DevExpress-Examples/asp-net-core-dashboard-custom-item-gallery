@@ -87,7 +87,7 @@ A custom **Web Page** item displays a single web page or a set of pages. You can
 
 ![web-page-item](images/web-page-item.png)
 
-- **URL** - Specifies a web page URL. You can set a single page as well as a set of pages (e.g., https://en.wikipedia.org/wiki/{0}). If you add a dimension and specify a placeholder, the data source field returns strings that will be inserted in the position of the {0} placeholder. Thus, the Web Page item joins the specified URL with the current dimension value and displays the page located by this address.
+- **URL** - Specifies a web page URL. You can set a single page as well as a set of pages (e.g., 'https://en.wikipedia.org/wiki/{0}'). If you add a dimension and specify a placeholder, the data source field returns strings that will be inserted in the position of the {0} placeholder. Thus, the Web Page item joins the specified URL with the current dimension value and displays the page located by this address.
 
 ## Tasks Dashboard
 
