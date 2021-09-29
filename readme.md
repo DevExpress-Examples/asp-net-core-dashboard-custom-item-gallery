@@ -19,7 +19,7 @@ The example contains the source code of custom items you can use in your Web Das
 
 ## Country Sales Dashboard
 
-The dashboard displays product sales for the selected category. Use the Country parameter to filter data by a country. Select a category on the Polar Chart to show sales by products from this category in the table.
+The dashboard displays product sales for the selected category. Use the Country parameter to filter data by country. Select a category on the Polar Chart to show sales by products from this category in the table.
 
 This dashboard contains the following custom items:
 
@@ -48,7 +48,7 @@ A custom **Polar Chart** item that allows you to use the [dxPolarChart](https://
 
 **View Script**: [ParameterItem.js](CS/AspNetCoreCustomItem/wwwroot/js/ParameterItem.js)
 
-A custom **Parameter** item renders [dashboard parameter dialog](https://docs.devexpress.com/Dashboard/117571) content inside the dashboard layout and allows you to edit and submit parameter values. This item supports the following settings that you can configure in the Web Dashboard UI:
+A custom **Parameter** item renders [dashboard parameter dialog](https://docs.devexpress.com/Dashboard/117571) content inside the dashboard layout, and allows you to edit and submit parameter values. This item supports the following settings that you can configure in the Web Dashboard UI:
 
 ![parameter-item](images/parameter-item.png)
 
