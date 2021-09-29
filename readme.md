@@ -1,6 +1,6 @@
 # Dashboard for ASP.NET Core - Custom Item Gallery
 
-The example contains the source code of custom items you can use in your Web Dashboard application.
+The example contains the source code of the most requested custom items you can use in your Web Dashboard application. Use the custom items from this example as they are, or modify them according to your needs. In this Web Dashboard application, you can add custom items from the **Custom Items** group in the [Toolbox](https://docs.devexpress.com/Dashboard/117442/web-dashboard/ui-elements-and-customization/ui-elements/toolbox).
 
 <!-- default file list -->
 
@@ -124,4 +124,4 @@ These extensions are distributed under the **MIT** license (free and open-source
 
 - [Dashboard for ASP.NET Core - Custom Item Tutorials](https://github.com/DevExpress-Examples/asp-net-core-dashboard-custom-item-tutorials)
 - [Dashboard for React - Custom Item Tutorials](https://github.com/DevExpress-Examples/dashboard-react-app-custom-item-tutorials)
-- [Dashboard for React - Custom Item Gallery](https://github.com/DevExpress-Examples/dashboard-for-react-custom-item-gallery)
+- [Dashboard for WinForms - Custom Item Extensions](https://github.com/DevExpress-Examples/winforms-dashboard-custom-items-extension)
