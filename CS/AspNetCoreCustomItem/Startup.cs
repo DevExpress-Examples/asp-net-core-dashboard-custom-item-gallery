@@ -77,6 +77,9 @@ namespace AspNetCoreCustomItemGallery {
             if (e.DataSourceName == "Departments") {
                 e.ConnectionParameters = new XmlFileConnectionParameters() { FileName = FileProvider.GetFileInfo("Data/Departments.xml").PhysicalPath };
             }
+            if (e.DataSourceName == "Energy Statistics") {
+                e.ConnectionParameters = new ExcelDataSourceConnectionParameters(FileProvider.GetFileInfo("Data/EnergyStatistics.xls").PhysicalPath);
+            }
         }
 
         private void Configurator_DataLoading(object sender, DataLoadingWebEventArgs e) {
