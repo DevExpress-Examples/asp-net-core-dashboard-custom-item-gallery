@@ -1,7 +1,13 @@
 ﻿let TreeViewCustomItem = (function () {
 	const Dashboard = DevExpress.Dashboard;
 	const dxTreeView = DevExpress.ui.dxTreeView;
-	const svgIcon = '<svg id= "treeViewIcon" viewBox="0 0 24 24" class="dx-dashboard-contrast-icon"><path d="M12 2 L2 22 L22 22 Z" /></svg>';
+	const svgIcon = `<?xml version="1.0" encoding="utf-8"?>
+		<svg version="1.1" id="treeViewIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+			<polygon class="dx-dashboard-contrast-icon" points="12,13 12,11 8,11 8,8 6,8 6,21 12,21 12,19 8,19 8,13 "/>
+			<path class="dx-dashboard-accent-icon" d="M10,7H4C3.5,7,3,6.6,3,6V2c0-0.5,0.5-1,1-1h6c0.6,0,1,0.5,1,1v4C11,6.6,10.6,7,10,7z
+				 M21,14v-4c0-0.6-0.5-1-1-1h-6c-0.6,0-1,0.4-1,1v4c0,0.6,0.4,1,1,1h6C20.5,15,21,14.6,21,14z M21,22v-4c0-0.5-0.5-1-1-1h-6
+				c-0.6,0-1,0.5-1,1v4c0,0.5,0.4,1,1,1h6C20.5,23,21,22.5,21,22z"/>
+		</svg>`;
 	const treeViewMetadata = {
 		bindings: [{
 			propertyName: 'idBinding',

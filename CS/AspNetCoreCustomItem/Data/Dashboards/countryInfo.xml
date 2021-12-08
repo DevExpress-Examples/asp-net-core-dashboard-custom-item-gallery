@@ -2,7 +2,7 @@
 <Dashboard>
   <Title Text="Country Info" />
   <DataSources>
-    <ExcelDataSource Name="Energy Statistics" FileName="D:\work\examples\asp-net-core-dashboard-custom-item-gallery\CS\AspNetCoreCustomItem\Data\EnergyStatistics.xls" ComponentName="excelDataSource1">
+    <ExcelDataSource Name="Energy Statistics" ConnectionName="energyStatisticsDataConnection" ComponentName="excelDataSource1">
       <Options Type="DevExpress.DataAccess.Excel.ExcelSourceOptions" SkipEmptyRows="true" UseFirstRowAsHeader="true" SkipHiddenColumns="true" SkipHiddenRows="true">
         <ImportSettings Type="DevExpress.DataAccess.Excel.ExcelWorksheetSettings" WorksheetName="Map Data" />
       </Options>
