@@ -40,7 +40,7 @@ namespace AspNetCoreCustomItemGallery {
                 configurator.SetDashboardStorage(dashboardFileStorage);
                 DataSourceInMemoryStorage dataSourceStorage = new DataSourceInMemoryStorage();
 
-                DashboardSqlDataSource sqlDataSource = new DashboardSqlDataSource("SQL Data Source", "NWindConnectionString");
+                DashboardSqlDataSource sqlDataSource = new DashboardSqlDataSource("Sales Person", "NWindConnectionString");                
                 sqlDataSource.DataProcessingMode = DataProcessingMode.Client;
                 SelectQuery query = SelectQueryFluentBuilder
                     .AddTable("Categories")
@@ -51,7 +51,7 @@ namespace AspNetCoreCustomItemGallery {
                 dataSourceStorage.RegisterDataSource("sqlDataSource", sqlDataSource.SaveToXml());
 
                 DashboardExcelDataSource energyStatistics = new DashboardExcelDataSource("Energy Statistics");
-                energyStatistics.FileName = FileProvider.GetFileInfo("Data/EnergyStatistics.xls").PhysicalPath;
+                energyStatistics.ConnectionName = "energyStatisticsDataConnection";
                 energyStatistics.SourceOptions = new ExcelSourceOptions(new ExcelWorksheetSettings("Map Data"));
                 dataSourceStorage.RegisterDataSource("energyStatisticsDataSource", energyStatistics.SaveToXml());
 
@@ -68,16 +68,10 @@ namespace AspNetCoreCustomItemGallery {
         }
 
         private void Configurator_ConfigureDataConnection(object sender, ConfigureDataConnectionWebEventArgs e) {
-            if (e.DataSourceName.Contains("Departments")) {
-                Uri fileUri = new Uri(FileProvider.GetFileInfo("Data/Departments.json").PhysicalPath, UriKind.RelativeOrAbsolute);
-                JsonSourceConnectionParameters jsonParams = new JsonSourceConnectionParameters();
-                jsonParams.JsonSource = new UriJsonSource(fileUri);
-                e.ConnectionParameters = jsonParams;
-            }
             if (e.DataSourceName == "Departments") {
                 e.ConnectionParameters = new XmlFileConnectionParameters() { FileName = FileProvider.GetFileInfo("Data/Departments.xml").PhysicalPath };
             }
-            if (e.DataSourceName == "Energy Statistics") {
+            if (e.ConnectionName == "energyStatisticsDataConnection") {
                 e.ConnectionParameters = new ExcelDataSourceConnectionParameters(FileProvider.GetFileInfo("Data/EnergyStatistics.xls").PhysicalPath);
             }
         }
