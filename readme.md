@@ -5,7 +5,9 @@
 <!-- default badges end -->
 # Dashboard for ASP.NET Core - Custom Item Gallery
 
-The example contains the source code of the most requested custom items you can use in your Web Dashboard application. Use the custom items from this example as they are, or modify them according to your needs. In this Web Dashboard application, you can add custom items from the **Custom Items** group in the [Toolbox](https://docs.devexpress.com/Dashboard/117442/web-dashboard/ui-elements-and-customization/ui-elements/toolbox).
+The example contains the source code of the most requested custom items you can use in your Web Dashboard application. Use the custom items from this example as they are, or modify them according to your needs. In this Web Dashboard application, you can add custom items from the **Custom Items** group in the [Toolbox](https://docs.devexpress.com/Dashboard/117442/web-dashboard/ui-elements-and-customization/ui-elements/toolbox):
+
+![toolbox](images/toolbox.png)
 
 <!-- default file list -->
 
