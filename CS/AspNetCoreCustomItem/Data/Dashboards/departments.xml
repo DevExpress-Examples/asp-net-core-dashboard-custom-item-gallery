@@ -47,7 +47,7 @@
       </GridColumns>
       <GridOptions />
     </Grid>
-    <CustomItem ComponentName="customItemDashboardItem1" Name="Hierarchical Tree View" DataSource="dashboardSqlDataSource1" DataMember="Table" CustomItemType="hierarchicalTreeViewItem">
+    <CustomItem ComponentName="customItemDashboardItem1" Name="Hierarchical Tree View" DataSource="dashboardSqlDataSource1" DataMember="Table" CustomItemType="TreeView">
       <InteractivityOptions IgnoreMasterFilters="true" MasterFilterMode="Multiple" />
       <DataItems>
         <Dimension DataMember="ID" DefaultId="DataItem0" />

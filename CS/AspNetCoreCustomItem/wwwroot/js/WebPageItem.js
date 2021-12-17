@@ -1,6 +1,9 @@
 ﻿let WebPageCustomItem = (function () {
+
+    const WEBPAGE_EXTENSION_NAME = 'WebPage';
+
     const svgIcon = `<?xml version="1.0" encoding="utf-8"?>        
-        <svg version = "1.1" id = "webPageItemIcon" xmlns = "http://www.w3.org/2000/svg" xmlns: xlink = "http://www.w3.org/1999/xlink" x = "0px" y = "0px" viewBox = "0 0 24 24" style = "enable-background:new 0 0 24 24;" xml: space = "preserve" >
+        <svg version="1.1" id="` + WEBPAGE_EXTENSION_NAME + `" xmlns = "http://www.w3.org/2000/svg" xmlns:xlink = "http://www.w3.org/1999/xlink" x = "0px" y = "0px" viewBox = "0 0 24 24" style = "enable-background:new 0 0 24 24;" xml:space = "preserve" >
             <path class="dx-dashboard-contrast-icon" d="M20.7,4.7l-3.4-3.4C17.1,1.1,16.9,1,16.6,1H4C3.4,1,3,1.4,3,2v20c0,0.6,0.4,1,1,1h16
 	        c0.6,0,1-0.4,1-1V5.4C21,5.1,20.9,4.9,20.7,4.7z M19,21H5V3h11v2c0,0.6,0.4,1,1,1h2V21z"/>
             <path class="dx-dashboard-accent-icon" d="M13.7,17.5c-0.2-0.4-1.6-1.8-1.4-2.2s0.2-1.1-0.1-1.3c-0.3-0.1-0.7,0.1-0.7-0.2
@@ -32,7 +35,7 @@
                 editorType: 'dxTextBox',
             }]
         }],
-        icon: 'webPageItemIcon',
+        icon: WEBPAGE_EXTENSION_NAME,
         title: 'Web Page',
         index: 2
     };
@@ -67,8 +70,8 @@
     };
 
     function WebPageItem(dashboardControl) {
-        DevExpress.Dashboard.ResourceManager.registerIcon(svgIcon);
-        this.name = "webPageItem";
+        dashboardControl.registerIcon(svgIcon);
+        this.name = WEBPAGE_EXTENSION_NAME;
         this.metaData = webPageMetadata;
         this.createViewerItem = function (model, $element, content) {
             return new WebPageItemViewer(model, $element, content);

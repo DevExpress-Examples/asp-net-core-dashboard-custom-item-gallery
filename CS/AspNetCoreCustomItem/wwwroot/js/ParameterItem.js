@@ -2,6 +2,8 @@
     const Model = DevExpress.Dashboard.Model;
     const Designer = DevExpress.Dashboard.Designer;
 
+    const PARAMETER_EXTENSION_NAME = 'ParameterItem';
+
     const onOffButtons = [{ text: 'On' }, { text: 'Off' }];
     const buttonsStyle = {
         containerHeight: 60,
@@ -12,7 +14,7 @@
     };
 
     const svgIcon = `<?xml version="1.0" encoding="utf-8"?>
-        <svg version="1.1" id="parameterItemIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        <svg version="1.1" id="` + PARAMETER_EXTENSION_NAME + `" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	         viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
         <g class="st0">
 	        <path class="dx-dashboard-contrast-icon" d="M6,12c0.4,0,0.7,0.1,1,0.2V5c0-0.6-0.4-1-1-1S5,4.4,5,5v7.2
@@ -66,7 +68,7 @@
                 },
             }],
         }],
-        icon: 'parameterItemIcon',
+        icon: PARAMETER_EXTENSION_NAME,
         title: 'Parameters',
     };
 
@@ -89,7 +91,6 @@
     ParameterItemViewer.prototype = Object.create(DevExpress.Dashboard.CustomItemViewer.prototype);
     ParameterItemViewer.prototype.constructor = ParameterItemViewer;
 
-
     ParameterItemViewer.prototype.setSize = function (width, height) {
         Object.getPrototypeOf(ParameterItemViewer.prototype).setSize.call(this, width, height);
         this._setGridHeight();
@@ -102,7 +103,6 @@
         this.parametersExtension.showDialogButton(true);
         this.buttons.forEach(button => button.dispose());
     }
-
 
     ParameterItemViewer.prototype.renderContent = function ($element, changeExisting) {
         var element = $element.get(0);
@@ -200,8 +200,8 @@
     };
 
     function ParameterItem(dashboardControl) {
-        DevExpress.Dashboard.ResourceManager.registerIcon(svgIcon);
-        this.name = "parameterItem";
+        dashboardControl.registerIcon(svgIcon);
+        this.name = PARAMETER_EXTENSION_NAME;
         this.metaData = parameterMetadata;
         this.createViewerItem = function (model, $element, content) {
             var parametersExtension = dashboardControl.findExtension("dashboard-parameter-dialog");
