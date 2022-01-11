@@ -73,40 +73,67 @@
 			dataSource.push(row);
 		});
 
-		let container = $element.jquery ? $element[0] : $element;
-		while (container.firstChild)
-			container.removeChild(container.firstChild);
-
-		let div = document.createElement('div');
-		let treeView = new dxTreeView(div, {
+		let treeViewOptions = {
 			items: dataSource,
 			dataStructure: "plain",
 			parentIdExpr: "ParentID",
 			keyExpr: "ID",
 			displayExpr: "DisplayField",
 			selectionMode: "multiple",
-			selectNodesRecursive: true,
-			showCheckBoxesMode: "normal",
-			onSelectionChanged: (e) => {
-				let selectedNodeKeys = e.component.getSelectedNodeKeys();
-				let selectedRows = dataSource
-					.filter(function (row) { return selectedNodeKeys.indexOf(row.ID) !== -1 })
-					.map(function (row) {
-						return [row._customData.getUniqueValue('dimensionsBinding')[0]]
-					});
-				let viewerApiExtension = this.dashboardControl.findExtension("viewer-api");
-				if (this.getMasterFilterMode() === 'Multiple') {
-					if (selectedRows.length)
-						viewerApiExtension.setMasterFilter(this.model.componentName(), selectedRows);
-					else
-						viewerApiExtension.clearMasterFilter(this.model.componentName());
+			selectNodesRecursive: false,
+			onItemClick: e => {
+				if (this.getMasterFilterMode() === 'Multiple' && this.allowMultiselection) {
+					this.setMasterFilterRecursive(e.node);
 				}
+				else {
+					this.setMasterFilter(e.itemData._customData);
+				}
+			},
+			onContentReady: e => {
+				this.updateTreeViewSelection();
 			}
-		});
-		treeView.selectAll();
-		container.appendChild(div);
+		};
+
+		if (!changeExisting) {
+			let container = $element.jquery ? $element[0] : $element;
+			while (container.firstChild)
+				container.removeChild(element.firstChild);
+			let div = document.createElement('div');
+			container.appendChild(div);
+			this.dxTreeViewWidget = new dxTreeView(div, treeViewOptions);
+		}
+		else {
+			this.dxTreeViewWidget.option(treeViewOptions);
+		}
 	};
-	
+
+	TreeViewViewer.prototype.setSelection = function (values) {
+		Object.getPrototypeOf(TreeViewViewer.prototype).setSelection.call(this, values);
+		this.updateTreeViewSelection();
+	};
+
+	TreeViewViewer.prototype.clearSelection = function () {
+		Object.getPrototypeOf(TreeViewViewer.prototype).clearSelection.call(this);
+		this.updateTreeViewSelection();
+	};
+
+	TreeViewViewer.prototype.updateTreeViewSelection = function() {
+		if (this.dxTreeViewWidget) {
+			this.dxTreeViewWidget.unselectAll();
+			let nodes = this.dxTreeViewWidget.option('items');
+
+			nodes.forEach(item => {
+				if (this.isSelected(item._customData))
+					this.dxTreeViewWidget.selectItem(item.ID);
+			});
+		}
+	}
+
+	TreeViewViewer.prototype.setMasterFilterRecursive = function(node) {
+		this.setMasterFilter(node.itemData._customData);
+		node.children.forEach(x => this.setMasterFilterRecursive(x));
+	}
+
 	function TreeViewItem(dashboardControl) {
 		dashboardControl.registerIcon(svgIcon);
 		this.name = HIERARCIAL_TREE_VIEW_EXTENSION_NAME;
