@@ -129,6 +129,7 @@ These extensions are distributed under the **MIT** license (free and open-source
 
 ## More Examples
 
+- [Dashboard for Angular - Custom Item Gallery](https://github.com/DevExpress-Examples/dashboard-angular-app-custom-item-gallery)
 - [Dashboard for React - Custom Item Gallery](https://github.com/DevExpress-Examples/dashboard-react-app-custom-item-gallery)
 - [Dashboard for React - Custom Item Tutorials](https://github.com/DevExpress-Examples/dashboard-react-app-custom-item-tutorials)
 - [Dashboard for ASP.NET Core - Custom Item Tutorials](https://github.com/DevExpress-Examples/asp-net-core-dashboard-custom-item-tutorials)
