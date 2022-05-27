@@ -12,7 +12,9 @@
   </DataSources>
   <Items>
     <CustomItem ComponentName="customItemDashboardItem1" Name="Online Map" DataSource="excelDataSource1" CustomItemType="OnlineMap">
+      <CustomProperties>
         <Type>RoadMap</Type>
+      </CustomProperties>
       <InteractivityOptions MasterFilterMode="Single" />
       <DataItems>
         <Dimension DataMember="Latitude" DefaultId="DataItem0" />
