@@ -36,6 +36,17 @@
             constraints: {
                 allowedTypes: ['Integer', 'Float', 'Double', 'Decimal']
             }
+        }, {
+            propertyName: 'Tooltip',
+            dataItemType: 'Dimension',
+            array: false,
+            enableInteractivity: true,
+            displayName: 'Tooltip',
+            emptyPlaceholder: 'Set Tooltip',
+            selectedPlaceholder: 'Configure Tooltip',
+            constraints: {
+                allowedTypes: ['Text']
+            }
         }],
         customProperties: [{
             ownerType: Model.CustomItem,
@@ -101,7 +112,12 @@
     OnlineMapItemViewer.prototype = Object.create(Dashboard.CustomItemViewer.prototype);
     OnlineMapItemViewer.prototype.constructor = OnlineMapItemViewer;
 
-    OnlineMapItemViewer.prototype._onClick = function (row) {
+    OnlineMapItemViewer.prototype._onClick = function (index, row) {
+        var markers = this.mapViewer.option('markers');
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].tooltip.isShown = i == index;
+        }
+
         this.setMasterFilter(row);
         this._updateSelection();
     };
@@ -138,15 +154,23 @@
             showMarkers = mode === 'Markers' || mode === 'MarkersAndRoutes' || this.canMasterFilter(),
             showRoutes = mode === 'Routes' || mode === 'MarkersAndRoutes';
         if (this.getBindingValue('Latitude').length > 0 && this.getBindingValue('Longitude').length > 0) {
+            let index = 0;
             this.iterateData(row => {
                 var latitude = row.getValue('Latitude')[0];
                 var longitude = row.getValue('Longitude')[0];
+                var tooltip = row.getValue('Tooltip')[0];
+
+                let idx = index;
+
                 if (latitude && longitude) {
                     if (showMarkers) {
                         markers.push({
                             location: { lat: latitude, lng: longitude },
                             iconSrc: this.isSelected(row) ? "https://js.devexpress.com/Demos/RealtorApp/images/map-marker.png" : null,
-                            onClick: args => this._onClick(row),
+                            onClick: args => this._onClick(idx, row),
+                            tooltip: {
+                                text: tooltip
+                            },
                             tag: row
                         });
                     }
@@ -154,6 +178,8 @@
                         routes.push([latitude, longitude]);
                     }
                 }
+
+                index++;
             });
         }
         let autoAdjust = markers.length > 0 || routes.length > 0,
@@ -177,7 +203,7 @@
                 opacity: 0.5,
                 mode: '',
                 locations: routes
-            }] : []
+            }] : [],
         };
         if (changeExisting && this.mapViewer) {
             this.mapViewer.option(options);

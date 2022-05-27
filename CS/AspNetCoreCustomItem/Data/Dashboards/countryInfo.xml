@@ -12,29 +12,31 @@
   </DataSources>
   <Items>
     <CustomItem ComponentName="customItemDashboardItem1" Name="Online Map" DataSource="excelDataSource1" CustomItemType="OnlineMap">
-      <CustomProperties>
         <Type>RoadMap</Type>
-      </CustomProperties>
       <InteractivityOptions MasterFilterMode="Single" />
       <DataItems>
         <Dimension DataMember="Latitude" DefaultId="DataItem0" />
         <Dimension DataMember="Longitude" DefaultId="DataItem1" />
+        <Dimension DataMember="Country" DefaultId="DataItem2" />
       </DataItems>
       <SliceTables>
         <SliceTable Name="SliceTable1">
           <Dimensions>
             <Dimension DefaultId="DataItem0" />
             <Dimension DefaultId="DataItem1" />
+            <Dimension DefaultId="DataItem2" />
           </Dimensions>
         </SliceTable>
       </SliceTables>
       <InteractivityTargets>
         <Dimension DefaultId="DataItem0" />
         <Dimension DefaultId="DataItem1" />
+        <Dimension DefaultId="DataItem2" />
       </InteractivityTargets>
       <CustomMetadata>
         <Latitude ItemType="Dimension" DefaultId="DataItem0" />
         <Longitude ItemType="Dimension" DefaultId="DataItem1" />
+        <Tooltip ItemType="Dimension" DefaultId="DataItem2" />
       </CustomMetadata>
     </CustomItem>
     <CustomItem ComponentName="customItemDashboardItem2" Name="Web Page" DataSource="excelDataSource1" CustomItemType="WebPage">
