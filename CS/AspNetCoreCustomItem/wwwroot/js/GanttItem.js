@@ -44,114 +44,115 @@
         index: 0
     };
 
-    function GanttItemViewer(model, $container, options) {
-        Dashboard.CustomItemViewer.call(this, model, $container, options);
-        this.dxGanttWidget = null;
-    }
+    class GanttItemViewer extends DevExpress.Dashboard.CustomItemViewer {
+        constructor(model, $container, options) {
+            super(model, $container, options);
+            this.dxGanttWidget = null;
+        }
 
-    GanttItemViewer.prototype = Object.create(Dashboard.CustomItemViewer.prototype);
-    GanttItemViewer.prototype.constructor = GanttItemViewer;
+        _getDataSource() {
+            var data = [];
+            var datesValid = true;
 
-    GanttItemViewer.prototype._getDataSource = function () {
-        var data = [];
-        var datesValid = true;
+            this.iterateData(function (dataRow) {
+                data.push({
+                    id: dataRow.getValue('ID')[0],
+                    parentId: dataRow.getValue('ParentID')[0],
+                    title: dataRow.getValue('Text')[0],
+                    start: dataRow.getValue('StartDate')[0],
+                    end: dataRow.getValue('FinishDate')[0],
+                    clientDataRow: dataRow
+                });
 
-        this.iterateData(function (dataRow) {
-            data.push({
-                id: dataRow.getValue('ID')[0],
-                parentId: dataRow.getValue('ParentID')[0],
-                title: dataRow.getValue('Text')[0],
-                start: dataRow.getValue('StartDate')[0],
-                end: dataRow.getValue('FinishDate')[0],
-                clientDataRow: dataRow
+                var currentItem = data[data.length - 1];
+            
+                if ((currentItem.start && !(currentItem.start instanceof Date)) || (currentItem.end && !(currentItem.end instanceof Date)))
+                    datesValid = false;
             });
 
-            var currentItem = data[data.length - 1];
-         
-            if ((currentItem.start && !(currentItem.start instanceof Date)) || (currentItem.end && !(currentItem.end instanceof Date)))
-                datesValid = false;
-        });
+            if (!datesValid) {
+                DevExpress.ui.notify("Gantt: 'Start Date' or 'Finish Date' is not a Date object.", "warning", 3000);
+                return [];
+            }
 
-        if (!datesValid) {
-            DevExpress.ui.notify("Gantt: 'Start Date' or 'Finish Date' is not a Date object.", "warning", 3000);
-            return [];
+            return data;
         }
 
-        return data;
-    };
+        _getDxGanttWidgetSettings() {
+            var _this = this;
+            return {
+                rootValue: -1,
+                tasks: {
+                    dataSource: this._getDataSource()
+                },
+                columns: [{
+                    dataField: "title",
+                    caption: "Subject",
+                    width: 300,
+                }, {
+                    dataField: "start",
+                    caption: "Start Date"
+                }, {
+                    dataField: "end",
+                    caption: "End Date"
+                }],
+                onTaskClick: function (e) {
+                    var tasks = e.component.option("tasks.dataSource");
+                    var clickedTask = tasks.filter(item => item.id === e.key)[0];
 
-    GanttItemViewer.prototype._getDxGanttWidgetSettings = function () {
-        var _this = this;
-        return {
-            rootValue: -1,
-            tasks: {
-                dataSource: this._getDataSource()
-            },
-            columns: [{
-                dataField: "title",
-                caption: "Subject",
-                width: 300,
-            }, {
-                dataField: "start",
-                caption: "Start Date"
-            }, {
-                dataField: "end",
-                caption: "End Date"
-            }],
-            onTaskClick: function (e) {
-                var tasks = e.component.option("tasks.dataSource");
-                var clickedTask = tasks.filter(item => item.id === e.key)[0];
-
-                _this.setMasterFilter(clickedTask.clientDataRow);
-            },
-            scaleType: "days",
-            taskListWidth: 500,
-        };
-    };
-
-    GanttItemViewer.prototype.setSelection = function (values) {
-        Object.getPrototypeOf(GanttItemViewer.prototype).setSelection.call(this, values);
-
-        var _this = this;
-        var tasks = _this.dxGanttWidget.option("tasks.dataSource");
-
-        tasks.forEach(function (item) {
-            if (_this.isSelected(item.clientDataRow))
-                _this.dxGanttWidget.option("selectedRowKey", item.id);
-        });
-    };
-
-    GanttItemViewer.prototype.clearSelection = function () {
-        Object.getPrototypeOf(GanttItemViewer.prototype).clearSelection.call(this);
-        this.dxGanttWidget.option("selectedRowKey", null);
-    };
-
-    GanttItemViewer.prototype.setSize = function (width, height) {
-        Object.getPrototypeOf(GanttItemViewer.prototype).setSize.call(this, width, height);
-        this.dxGanttWidget.repaint();
-    };
-
-    GanttItemViewer.prototype.renderContent = function ($element, changeExisting) {
-        if (!changeExisting) {
-            var element = $element.jquery ? $element[0] : $element;
-
-            while (element.firstChild)
-                element.removeChild(element.firstChild);
-
-            this.dxGanttWidget = new DevExpress.ui.dxGantt(element, this._getDxGanttWidgetSettings());
-        } else {
-            this.dxGanttWidget.option(this._getDxGanttWidgetSettings());
+                    _this.setMasterFilter(clickedTask.clientDataRow);
+                },
+                scaleType: "days",
+                taskListWidth: 500,
+            };
         }
-    };
 
-    function GanttItem(dashboardControl) {
-        dashboardControl.registerIcon(svgIcon);
-        this.name = GANTT_EXTENSION_NAME;
-        this.metaData = ganttItemMetadata;
-        this.createViewerItem = function (model, $element, content) {
+        setSelection(values) {
+            super.setSelection(values);
+
+            var _this = this;
+            var tasks = _this.dxGanttWidget.option("tasks.dataSource");
+
+            tasks.forEach(function (item) {
+                if (_this.isSelected(item.clientDataRow))
+                    _this.dxGanttWidget.option("selectedRowKey", item.id);
+            });
+        }
+
+        clearSelection() {
+            super.clearSelection();
+            this.dxGanttWidget.option("selectedRowKey", null);
+        }
+
+        setSize(width, height) {
+            super.setSize(width, height);
+            this.dxGanttWidget.repaint();
+        }
+
+        renderContent($element, changeExisting) {
+            if (!changeExisting) {
+                var element = $element.jquery ? $element[0] : $element;
+
+                while (element.firstChild)
+                    element.removeChild(element.firstChild);
+
+                this.dxGanttWidget = new DevExpress.ui.dxGantt(element, this._getDxGanttWidgetSettings());
+            } else {
+                this.dxGanttWidget.option(this._getDxGanttWidgetSettings());
+            }
+        }
+    }
+
+    class GanttItem{ 
+        constructor(dashboardControl) {
+            dashboardControl.registerIcon(svgIcon);
+            this.name = GANTT_EXTENSION_NAME;
+            this.metaData = ganttItemMetadata;
+        }
+        createViewerItem(model, $element, content) {
             return new GanttItemViewer(model, $element, content);
         }
-    };
+    }
 
     return GanttItem;
 })();

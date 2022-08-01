@@ -51,121 +51,121 @@
         index: 2
     };
 
-    function PolarChartItemViewer(model, $container, options) {
-        CustomItemViewer.call(this, model, $container, options);
-        this.dxPolarWidget = null;
-        this.dxPolarWidgetSettings = null;
+    class PolarChartItemViewer extends DevExpress.Dashboard.CustomItemViewer {
+        constructor(model, $container, options) {
+            super(model, $container, options);
+            this.dxPolarWidget = null;
+            this.dxPolarWidgetSettings = null;
+        }
+
+        _getDataSource() {
+            let data = [];
+            if (this.getBindingValue('measureValue').length > 0) {
+                this.iterateData(function (dataRow) {
+                    var dataItem = {
+                        arg: dataRow.getValue('dimensionValue') || "",
+                        color: dataRow.getColor()[0],
+                        clientDataRow: dataRow
+                    };
+
+                    var measureValues = dataRow.getValue('measureValue');
+
+                    for (var i = 0; i < measureValues.length; i++) {
+                        dataItem["measureValue" + i] = measureValues[i];
+                    }
+
+                    data.push(dataItem);
+                });
+            }
+
+            return data;
+        }
+
+        _getDxPolarWidgetSettings() {
+            let series = [];
+            let dataSource = this._getDataSource();
+            let measureValueBindings = this.getBindingValue('measureValue');
+
+            for (var i = 0; i < measureValueBindings.length; i++) {
+                series.push({ valueField: "measureValue" + i, name: measureValueBindings[i].displayName() });
+            }
+
+            return {
+                dataSource: dataSource,
+                series: series,
+                useSpiderWeb: true,
+                resolveLabelOverlapping: "hide",
+                pointSelectionMode: "multiple",
+                commonSeriesSettings: {
+                    type: "line",
+                    label: {
+                        visible: this.getPropertyValue("labelVisibleProperty")
+                    }
+                },
+                "export": {
+                    enabled: false
+                },
+                tooltip: {
+                    enabled: false
+                },
+                onPointClick: (e) => {
+                    var point = e.target;
+                    this.setMasterFilter(point.data.clientDataRow);
+                }
+            };
+        }
+
+        renderContent($element, changeExisting) {
+            if (!changeExisting) {
+                while ($element.firstChild)
+                    $element.removeChild($element.firstChild);
+                this.dxPolarWidget = new dxPolarChart($element, this._getDxPolarWidgetSettings());
+            } else {
+                this.dxPolarWidget.option(this._getDxPolarWidgetSettings());
+            }
+            this.updateSelection();
+        }
+
+        setSelection(values) {
+            super.setSelection(values);
+
+            this.updateSelection();
+        }
+
+        updateSelection() {
+            let series = this.dxPolarWidget.getAllSeries();
+
+            for (var i = 0; i < series.length; i++) {
+                var points = series[i].getAllPoints()
+                for (var j = 0; j < points.length; j++) {
+                    if (this.isSelected(points[j].data.clientDataRow))
+                        points[j].select();
+                    else
+                        points[j].clearSelection();
+                }
+            }
+        }
+
+        clearSelection() {
+            super.clearSelection();
+            this.dxPolarWidget.clearSelection();
+        }
+
+        setSize(width, height) {
+            super.setSize(width, height);
+            this.dxPolarWidget.render();
+        }
     }
-
-    PolarChartItemViewer.prototype = Object.create(CustomItemViewer.prototype);
-    PolarChartItemViewer.prototype.constructor = PolarChartItemViewer;
-
-    PolarChartItemViewer.prototype._getDataSource = function () {
-        let data = [];
-        if (this.getBindingValue('measureValue').length > 0) {
-            this.iterateData(function (dataRow) {
-                var dataItem = {
-                    arg: dataRow.getValue('dimensionValue') || "",
-                    color: dataRow.getColor()[0],
-                    clientDataRow: dataRow
-                };
-
-                var measureValues = dataRow.getValue('measureValue');
-
-                for (var i = 0; i < measureValues.length; i++) {
-                    dataItem["measureValue" + i] = measureValues[i];
-                }
-
-                data.push(dataItem);
-            });
+    class PolarChartItem {
+        constructor(dashboardControl) {
+            dashboardControl.registerIcon(svgIcon);
+            this.name = POLAR_CHART_EXTENSION_NAME;
+            this.metaData = polarChartItemMetadata;
         }
-
-        return data;
-    };
-
-    PolarChartItemViewer.prototype._getDxPolarWidgetSettings = function () {
-        let series = [];
-        let dataSource = this._getDataSource();
-        let measureValueBindings = this.getBindingValue('measureValue');
-
-        for (var i = 0; i < measureValueBindings.length; i++) {
-            series.push({ valueField: "measureValue" + i, name: measureValueBindings[i].displayName() });
-        }
-
-        return {
-            dataSource: dataSource,
-            series: series,
-            useSpiderWeb: true,
-            resolveLabelOverlapping: "hide",
-            pointSelectionMode: "multiple",
-            commonSeriesSettings: {
-                type: "line",
-                label: {
-                    visible: this.getPropertyValue("labelVisibleProperty")
-                }
-            },
-            "export": {
-                enabled: false
-            },
-            tooltip: {
-                enabled: false
-            },
-            onPointClick: (e) => {
-                var point = e.target;
-                this.setMasterFilter(point.data.clientDataRow);
-            }
-        };
-    };
-
-    PolarChartItemViewer.prototype.renderContent = function ($element, changeExisting) {
-        if (!changeExisting) {
-            while ($element.firstChild)
-                $element.removeChild($element.firstChild);
-            this.dxPolarWidget = new dxPolarChart($element, this._getDxPolarWidgetSettings());
-        } else {
-            this.dxPolarWidget.option(this._getDxPolarWidgetSettings());
-        }
-        this.updateSelection();
-    };
-
-    PolarChartItemViewer.prototype.setSelection = function (values) {
-        Object.getPrototypeOf(PolarChartItemViewer.prototype).setSelection.call(this, values);
-
-        this.updateSelection();
-    };
-
-    PolarChartItemViewer.prototype.updateSelection = function () {
-        let series = this.dxPolarWidget.getAllSeries();
-
-        for (var i = 0; i < series.length; i++) {
-            var points = series[i].getAllPoints()
-            for (var j = 0; j < points.length; j++) {
-                if (this.isSelected(points[j].data.clientDataRow))
-                    points[j].select();
-                else
-                    points[j].clearSelection();
-            }
-        }
-    };
-
-    PolarChartItemViewer.prototype.clearSelection = function () {
-        Object.getPrototypeOf(PolarChartItemViewer.prototype).clearSelection.call(this);
-        this.dxPolarWidget.clearSelection();
-    };
-
-    PolarChartItemViewer.prototype.setSize = function (width, height) {
-        Object.getPrototypeOf(PolarChartItemViewer.prototype).setSize.call(this, width, height);
-        this.dxPolarWidget.render();
-    };
-
-    function PolarChartItem(dashboardControl) {
-        dashboardControl.registerIcon(svgIcon);
-        this.name = POLAR_CHART_EXTENSION_NAME;
-        this.metaData = polarChartItemMetadata;
-        this.createViewerItem = function (model, $element, content) {
+        createViewerItem(model, $element, content) {
             return new PolarChartItemViewer(model, $element, content);
         }
-    };
+    }
 
     return PolarChartItem;
 })();

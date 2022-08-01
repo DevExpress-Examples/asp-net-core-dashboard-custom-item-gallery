@@ -2,7 +2,6 @@
     const Dashboard = DevExpress.Dashboard;
     const Designer = DevExpress.Dashboard.Designer;
     const Model = DevExpress.Dashboard.Model;
-    const D3Funnel = D3Funnel;
 
     const FUNNEL_D3_EXTENSION_NAME = 'FunnelD3';
     const svgIcon = '<?xml version="1.0" encoding="utf-8"?><!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="' + FUNNEL_D3_EXTENSION_NAME + '" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><polygon class="dx_green" points="2,1 22,1 16,8 8,8 "/><polygon class="dx_blue" points="8,9 16,9 14,15 10,15 "/><polygon class="dx_red" points="10,16 14,16 13,23 11,23 "/></svg>';
@@ -121,7 +120,7 @@
         }
 
         renderContent(element, changeExisting) {
-            let htmlElement = element;
+            let htmlElement= element instanceof $ ? element.get(0): element;
 
             var data = this._getDataSource();
             if (!this._ensureFunnelLibrary(htmlElement))
@@ -159,11 +158,11 @@
             this._update(this._getDataSource());
         }
         allowExportSingleItem() {
-            return !this._isIEBrowser();
+            return true;
         }
         getExportInfo() {
             return {
-                image: this._isIEBrowser() ? '' : this._getImageBase64()
+                image: this._getImageBase64()
             };
         }
         _getFunnelSizeOptions() {
@@ -224,7 +223,7 @@
                                     var obj = this.funnelSettings.data[index][0];
                                     return obj.data && this.isSelected(obj.data) ? getSelectionColor(obj.color) : obj.color;
                                 },
-                                type: (this.getPropertyValue('FillType')).toLowerCase()
+                                type: this.getPropertyValue('FillType').toLowerCase()
                             }
                         },
                         label: {
@@ -264,7 +263,7 @@
                 this.funnelSettings.data = data;
             }
             if (!!options) {
-                this.funnelSettings.options = { ...this.funnelSettings.options, ...options };
+                $.extend(true, this.funnelSettings.options, options);
             }
             if (!!this.funnelViewer) {
                 this.funnelViewer.draw(this.funnelSettings.data, this.funnelSettings.options);
@@ -288,19 +287,20 @@
             canvasContext && canvasContext.drawImage(this.exportingImage, 0, 0);
             return canvas.toDataURL().replace('data:image/png;base64,', '');
         }
-        _isIEBrowser() {
-            return navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0;
-        }
     }
 
-    function FunnelD3Item(dashboardControl) {
-        dashboardControl.registerIcon(svgIcon);
-        this.name = FUNNEL_D3_EXTENSION_NAME;
-        this.metaData = funnelMeta;
-        this.createViewerItem = function (model, $element, content) {
-            return new FunnelD3ItemViewer(model, $element, content);
+    class FunnelD3Item {
+        name = FUNNEL_D3_EXTENSION_NAME;
+        metaData = funnelMeta;
+    
+        constructor(dashboardControl) {
+            dashboardControl.registerIcon(svgIcon);
         }
-    };
+
+        createViewerItem(model, element, content) {
+            return new FunnelD3ItemViewer(model, element, content);
+        }
+    }
 
     return FunnelD3Item;
 })();
