@@ -1,4 +1,4 @@
-﻿let WebPageCustomItem = (function () {
+﻿window.WebPageCustomItem = (function () {
 
     const WEBPAGE_EXTENSION_NAME = 'WebPage';
 

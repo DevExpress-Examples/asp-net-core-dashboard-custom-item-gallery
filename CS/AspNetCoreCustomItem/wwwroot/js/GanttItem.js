@@ -1,4 +1,4 @@
-﻿let GanttCustomItem = (function () {
+﻿window.GanttCustomItem = (function () {
     const Dashboard = DevExpress.Dashboard;
 
     const GANTT_EXTENSION_NAME = 'GanttItem';

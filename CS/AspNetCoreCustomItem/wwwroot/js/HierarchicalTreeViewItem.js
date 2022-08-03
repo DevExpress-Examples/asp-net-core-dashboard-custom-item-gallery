@@ -1,4 +1,4 @@
-﻿let TreeViewCustomItem = (function () {
+﻿window.TreeViewCustomItem = (function () {
     const Dashboard = DevExpress.Dashboard;
     const dxTreeView = DevExpress.ui.dxTreeView;
 

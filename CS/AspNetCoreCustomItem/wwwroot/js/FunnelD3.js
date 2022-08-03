@@ -1,4 +1,4 @@
-﻿let FunnelD3CustomItem = (function () {
+﻿window.FunnelD3CustomItem = (function () {
     const Dashboard = DevExpress.Dashboard;
     const Designer = DevExpress.Dashboard.Designer;
     const Model = DevExpress.Dashboard.Model;

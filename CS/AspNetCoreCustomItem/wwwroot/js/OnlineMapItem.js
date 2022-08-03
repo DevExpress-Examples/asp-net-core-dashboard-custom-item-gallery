@@ -1,4 +1,4 @@
-﻿let OnlineMapCustomItem = (function () {
+﻿window.OnlineMapCustomItem = (function () {
     const Dashboard = DevExpress.Dashboard;
     const Model = DevExpress.Dashboard.Model;
     const Designer = DevExpress.Dashboard.Designer;

@@ -1,4 +1,4 @@
-﻿let SimpleTableCustomItem = (function () {
+﻿window.SimpleTableCustomItem = (function () {
     const CustomItem = DevExpress.Dashboard.Model.CustomItem;
     const FormItemTemplates = DevExpress.Dashboard.Designer.FormItemTemplates;
 
