@@ -64,13 +64,15 @@
         <dimensionValue ItemType="Dimension" DefaultId="DataItem1" />
       </CustomMetadata>
     </CustomItem>
-    <CustomItem ComponentName="customItemDashboardItem3" Name="Simple Table" DataSource="DataSource1" DataMember="SalesPerson" CustomItemType="CustomItemSimpleTable">
+    <CustomItem ComponentName="customItemDashboardItem1" Name="Parameters" ShowCaption="false" DataSource="DataSource1" DataMember="SalesPerson" CustomItemType="ParameterItem">
       <CustomProperties>
-        <showHeaders>On</showHeaders>
+        <automaticUpdates>On</automaticUpdates>
       </CustomProperties>
+    </CustomItem>
+    <CustomItem ComponentName="customItemDashboardItem3" Name="Simple Table" DataSource="DataSource1" DataMember="SalesPerson" CustomItemType="CustomItemSimpleTable">
       <DataItems>
         <Dimension DataMember="ProductName" DefaultId="DataItem0" />
-        <Measure DataMember="ExtendedPrice" Name="Extended Price" SummaryType="Count" DefaultId="DataItem1">
+        <Measure DataMember="ExtendedPrice" SummaryType="Count" DefaultId="DataItem1">
           <NumericFormat FormatType="Currency" />
         </Measure>
       </DataItems>
@@ -91,19 +93,54 @@
         <customMeasure ItemType="Measure" DefaultId="DataItem1" />
       </CustomMetadata>
     </CustomItem>
-    <CustomItem ComponentName="customItemDashboardItem1" Name="Parameters" ShowCaption="false" DataSource="DataSource1" DataMember="SalesPerson" CustomItemType="ParameterItem">
+    <CustomItem ComponentName="customItemDashboardItem4" Name="Funnel D3" DataSource="DataSource1" DataMember="SalesPerson" CustomItemType="FunnelD3">
       <CustomProperties>
-        <automaticUpdates>On</automaticUpdates>
+        <FillType>Solid</FillType>
+        <IsCurved>false</IsCurved>
+        <IsDynamicHeight>false</IsDynamicHeight>
+        <PinchCount>2</PinchCount>
       </CustomProperties>
+      <DataItems>
+        <Measure DataMember="Quantity" DefaultId="DataItem0" />
+        <Dimension DataMember="ProductName" SortOrder="Descending" ColoringMode="Hue" SortByMeasure="DataItem0" DefaultId="DataItem1" />
+      </DataItems>
+      <SliceTables>
+        <SliceTable Name="SliceTable1">
+          <Dimensions>
+            <Dimension DefaultId="DataItem1" />
+          </Dimensions>
+          <Measures>
+            <Measure DefaultId="DataItem0" />
+          </Measures>
+        </SliceTable>
+      </SliceTables>
+      <InteractivityTargets>
+        <Dimension DefaultId="DataItem1" />
+      </InteractivityTargets>
+      <ColoringDimensions>
+        <Dimension DefaultId="DataItem1" />
+      </ColoringDimensions>
+      <ColoringMeasures>
+        <Measure DefaultId="DataItem0" />
+      </ColoringMeasures>
+      <CustomMetadata>
+        <Values>
+          <Item1 ItemType="Measure" DefaultId="DataItem0" />
+        </Values>
+        <Arguments>
+          <Item1 ItemType="Dimension" DefaultId="DataItem1" />
+        </Arguments>
+      </CustomMetadata>
     </CustomItem>
   </Items>
   <LayoutTree>
     <LayoutGroup>
-      <LayoutGroup Orientation="Vertical" Weight="0.6364946928576967">
-        <LayoutItem DashboardItem="customItemDashboardItem1" Weight="0.18035884137205366" />
-        <LayoutItem DashboardItem="customItemDashboardItem3" Weight="0.7387267095406758" />
+      <LayoutGroup Orientation="Vertical" Weight="1.0984336527533602">
+        <LayoutItem DashboardItem="customItemDashboardItem1" Weight="0.6364946928576967" />
+        <LayoutItem DashboardItem="customItemDashboardItem3" Weight="1.9641802227778489" />
       </LayoutGroup>
-      <LayoutItem DashboardItem="customItemDashboardItem2" Weight="1.9641802227778489" />
+      <LayoutItem DashboardItem="customItemDashboardItem4" Weight="1.7684977467109355" />
+      <LayoutItem DashboardItem="customItemDashboardItem2" Weight="1.6979237389490986" />
     </LayoutGroup>
   </LayoutTree>
 </Dashboard>
