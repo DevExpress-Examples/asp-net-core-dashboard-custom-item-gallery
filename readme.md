@@ -20,6 +20,7 @@ The example contains the source code of the most requested custom items you can 
 * [WebPageItem.js](CS/AspNetCoreCustomItem/wwwroot/js/WebPageItem.js)
 * [GanttItem.js](CS/AspNetCoreCustomItem/wwwroot/js/GanttItem.js)
 * [HierarchicalTreeViewItem.js](CS/AspNetCoreCustomItem/wwwroot/js/HierarchicalTreeViewItem.js)
+* [FunnelD3.js](CS/AspNetCoreCustomItem/wwwroot/js/FunnelD3.js)
 * [_Layout.cshtml](CS/AspNetCoreCustomItem/Pages/_Layout.cshtml)
 
 <!-- default file list end -->
@@ -40,6 +41,19 @@ A custom **Simple Table** item renders data from the measure / dimensions as an 
 
 - **Show Headers** - Specifies whether to show the field headers in the table. The default value is `Auto`.
 - **Text Color** - Allows you to change the text color. The default value is `Dark`.
+
+### Funnel D3 Chart Item
+
+**View Script**: [FunnelD3.js](CS/AspNetCoreCustomItem/wwwroot/js/FunnelD3.js)
+
+A custom **Funnel D3 Chart** item renders a funnel chart using the [D3Funnel](https://github.com/jakezatecky/d3-funnel/blob/master/README.md) JS library. This custom item supports the following settings that you can configure in the Web Dashboard UI:
+
+![funnel-d3-item](images/funnel-d3-item.png)
+
+- **Fill Type** - Specifies the funnel chart's solid or gradient fill type.
+- **Curved** - Specifies whether the funnel is curved.
+- **Dynamic Height** - Specifies whether the height of blocks are proportional to their weight.
+- **Pinch Count** - Specifies how many blocks to pinch at the bottom to create a funnel "neck".
 
 ### Polar Chart Item
 
