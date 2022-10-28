@@ -9,9 +9,7 @@ The example contains the source code of the most requested custom items you can 
 
 ![toolbox](images/toolbox.png)
 
-<!-- default file list -->
-
-## Files to Look At
+## Files to Review
 
 * [SimpleTableItem.js](CS/AspNetCoreCustomItem/wwwroot/js/SimpleTableItem.js)
 * [PolarChartItem.js](CS/AspNetCoreCustomItem/wwwroot/js/PolarChartItem.js)
@@ -22,8 +20,6 @@ The example contains the source code of the most requested custom items you can 
 * [HierarchicalTreeViewItem.js](CS/AspNetCoreCustomItem/wwwroot/js/HierarchicalTreeViewItem.js)
 * [FunnelD3.js](CS/AspNetCoreCustomItem/wwwroot/js/FunnelD3.js)
 * [_Layout.cshtml](CS/AspNetCoreCustomItem/Pages/_Layout.cshtml)
-
-<!-- default file list end -->
 
 ## Country Sales Dashboard
 
