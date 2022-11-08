@@ -93,7 +93,7 @@
                 }
             };
 
-            if (!changeExisting) {
+            if (!changeExisting || !this.dxTreeViewWidget) {
                 let container = $element.jquery ? $element[0] : $element;
                 while (container.firstChild)
                     container.removeChild(element.firstChild);
