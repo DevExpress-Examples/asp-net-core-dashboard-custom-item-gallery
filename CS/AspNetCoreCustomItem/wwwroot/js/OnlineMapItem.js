@@ -124,7 +124,7 @@
         _updateSelection() {
             var markers = this.mapViewer.option('markers');
             markers.forEach(marker => {
-                marker.iconSrc = this.isSelected(marker.tag) ? "https://js.devexpress.com/Demos/RealtorApp/images/map-marker.png" : null;
+                marker.iconSrc = this.isSelected(marker.tag) ? "https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/maps/map-marker.png" : null;
             });
             this.mapViewer.option('autoAdjust', false);
             this.mapViewer.option('markers', markers);
