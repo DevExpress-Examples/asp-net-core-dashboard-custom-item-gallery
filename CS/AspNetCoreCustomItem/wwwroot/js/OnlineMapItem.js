@@ -165,7 +165,7 @@
                         if (showMarkers) {
                             markers.push({
                                 location: { lat: latitude, lng: longitude },
-                                iconSrc: this.isSelected(row) ? "https://js.devexpress.com/Demos/RealtorApp/images/map-marker.png" : null,
+                                iconSrc: this.isSelected(row) ? "https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/maps/map-marker.png" : null,
                                 onClick: args => this._onClick(idx, row),
                                 tooltip: {
                                     text: tooltip
