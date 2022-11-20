@@ -100,7 +100,7 @@ namespace AspNetCoreCustomItemGallery {
 
             app.UseRouting();
             app.UseEndpoints(endpoints => {
-                EndpointRouteBuilderExtension.MapDashboardRoute(endpoints, "api/dashboard", "DefaultDashboard");
+                endpoints.MapDashboardRoute("api/dashboard", "DefaultDashboard");
                 endpoints.MapRazorPages();
                 endpoints.MapControllerRoute(
                     name: "default",
