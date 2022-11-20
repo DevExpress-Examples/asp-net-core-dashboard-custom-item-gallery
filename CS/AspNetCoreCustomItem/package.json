@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@devexpress/analytics-core": "^22.1.4",
+    "@devexpress/analytics-core": "22.2-stable",
     "d3-funnel": "^1.2.2",
-    "devexpress-dashboard": "^22.1.4",
+    "devexpress-dashboard": "22.2-stable",
     "devexpress-gantt": "3.1.23",
-    "devextreme": "^22.1.4",
+    "devextreme": "22.2-stable",
     "jquery-ui-dist": "^1.12.1"
   }
 }
