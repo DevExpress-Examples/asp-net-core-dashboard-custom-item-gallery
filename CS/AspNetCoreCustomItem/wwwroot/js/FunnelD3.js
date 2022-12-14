@@ -103,12 +103,6 @@
     };
 
     class FunnelD3ItemViewer extends Dashboard.CustomItemViewer {
-        funnelSettings;
-        funnelViewer;
-        selectionValues;
-        exportingImage;
-        funnelContainer;
-
         constructor(model, container, options) {
             super(model, container, options);
 
@@ -290,11 +284,10 @@
     }
 
     class FunnelD3Item {
-        name = FUNNEL_D3_EXTENSION_NAME;
-        metaData = funnelMeta;
-    
         constructor(dashboardControl) {
             dashboardControl.registerIcon(svgIcon);
+            this.name = FUNNEL_D3_EXTENSION_NAME;
+            this.metaData = funnelMeta;
         }
 
         createViewerItem(model, element, content) {
