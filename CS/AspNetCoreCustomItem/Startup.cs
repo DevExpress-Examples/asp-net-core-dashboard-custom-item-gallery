@@ -60,7 +60,7 @@ namespace AspNetCoreCustomItemGallery {
                 dataSourceStorage.RegisterDataSource("objectDataSource", objDataSource.SaveToXml());
 
                 configurator.DataLoading += Configurator_DataLoading;
-                configurator.ConfigureDataConnection += Configurator_ConfigureDataConnection; ;
+                configurator.ConfigureDataConnection += Configurator_ConfigureDataConnection;
                 configurator.SetDataSourceStorage(dataSourceStorage);
 
                 return configurator;
