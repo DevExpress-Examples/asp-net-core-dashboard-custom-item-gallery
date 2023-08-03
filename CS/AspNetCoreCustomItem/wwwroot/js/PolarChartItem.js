@@ -56,6 +56,7 @@
             super(model, $container, options);
             this.dxPolarWidget = null;
             this.dxPolarWidgetSettings = null;
+            this.exportingImageData = null;
         }
 
         _getDataSource() {
@@ -111,6 +112,11 @@
                 onPointClick: (e) => {
                     var point = e.target;
                     this.setMasterFilter(point.data.clientDataRow);
+                },
+                onDrawn: (e) => {
+                    this.convertSVGtoPNG(e.component.svg(), e.element.width(), e.element.height()).then(data => {
+                        this.exportingImageData = data;
+                    });
                 }
             };
         }
@@ -154,6 +160,38 @@
         setSize(width, height) {
             super.setSize(width, height);
             this.dxPolarWidget.render();
+        }
+
+        allowExportSingleItem() {
+            return true;
+        }
+
+        getExportInfo() {
+            return {
+                image: this.exportingImageData
+            };
+        }
+
+        convertSVGtoPNG(svgString, width, height) {
+            return new Promise(function (resolve, reject) {
+                try {
+                    const encodedData = 'data:image/svg+xml;base64,' + window.btoa(window['unescape'](encodeURIComponent(svgString)));
+                    var image = new Image();
+                    var canvas = document.createElement('canvas');
+
+                    canvas.width = width;
+                    canvas.height = height;
+
+                    image.onload = () => {
+                        canvas.getContext('2d').drawImage(image, 0, 0);
+                        resolve(canvas.toDataURL().replace('data:image/png;base64,', ''));
+                    };
+
+                    image.src = encodedData;
+                } catch (err) {
+                    reject('Failed to convert SVG to PNG: ' + err);
+                }
+            });
         }
     }
     class PolarChartItem {
