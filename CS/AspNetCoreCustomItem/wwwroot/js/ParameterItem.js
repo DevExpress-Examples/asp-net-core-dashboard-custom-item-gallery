@@ -103,7 +103,8 @@
         }
 
         renderContent($element, changeExisting) {
-            var element = $element.get(0);
+            this._element = $element;
+            var element = this._element.get(0);
             if (!changeExisting) {
                 while (element.firstChild)
                     element.removeChild(element.firstChild);
@@ -174,7 +175,7 @@
 
         _subscribeProperties() {
             this.subscribe('showHeaders', (showHeaders) => { this._update({ showHeaders: showHeaders }); });
-            this.subscribe('showParameterName', (showParameterName) => { this._update({ showParameterName: showParameterName }); });
+            this.subscribe('showParameterName', (showParameterName) => { this._update({ showParameterName: showParameterName, rerender: true }); });
             this.subscribe('automaticUpdates', (automaticUpdates) => { this._update({ automaticUpdates: automaticUpdates }) });
         }
 
@@ -195,6 +196,9 @@
                 }
             }
             this._setGridHeight();
+            if (options.rerender) {
+                this.renderContent(this._element, false);
+            }
         }
     }
     class ParameterItem {
