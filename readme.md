@@ -91,7 +91,7 @@ A custom **Online Map** item allows you to place callouts on Google or Bing maps
 - **Type** - Specifies the map type. You can choose between `RoadMap`, `Satellite` or `Hybrid`.
 - **Display Mode** - Specifies whether to show markers or routes.
 
-Please specify the credentials for Azure/Bing Maps to ensure maps render correctly. You can specify the credentials in the [OnlineMapItem.js](CS/AspNetCoreCustomItem/wwwroot/js/OnlineMapItem.js#L194) file.
+To ensure maps render correctly, specify your Azure/Bing Maps credentials in the [OnlineMapItem.js](CS/AspNetCoreCustomItem/wwwroot/js/OnlineMapItem.js#L194) file.
 
 ### Web Page
 
