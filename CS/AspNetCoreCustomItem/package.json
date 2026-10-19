@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@devexpress/analytics-core": "25.1-stable",
+    "@devexpress/analytics-core": "26.1.5",
     "d3-funnel": "^1.2.2",
-    "devexpress-dashboard": "25.1-stable",
+    "devexpress-dashboard": "26.1.5",
     "devexpress-gantt": "3.1.23",
-    "devextreme-dist": "25.1-stable"
+    "devextreme-dist": "26.1.5"
   }
 }
